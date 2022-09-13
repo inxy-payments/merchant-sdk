@@ -5,7 +5,7 @@
 Install through Composer.
 
 ```
-composer require apvalkov/merchant-sdk
+composer require inxy-payments/merchant-sdk
 ```
 ## Example redirect to pay page
 ```php
