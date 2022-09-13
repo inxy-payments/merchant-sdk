@@ -9,8 +9,7 @@ composer require inxy-payments/merchant-sdk
 ```
 ## Example redirect to pay page
 ```php
-$apiKey    = 'Your api key here';
-
+$apiKey      = 'Your api key here';
 $config      = new Config(Environment::Sandbox, $apiKey, ApiVersion::v1);
 $merchantSDK = new MerchantSDK($config);
 
