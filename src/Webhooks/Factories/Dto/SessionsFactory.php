@@ -13,7 +13,7 @@ class SessionsFactory
      * @param stdClass $session
      * @return Session
      */
-    public static function create(stdClass $session)
+    public static function create(stdClass $session): Session
     {
         if (!property_exists($session, 'object') || $session->object !== ObjectName::Session) {
             throw new InvalidArgumentException('Session param must be object with name session');

@@ -24,7 +24,7 @@ class Customer implements Arrayable
      * @param string|null $firstName
      * @param string|null $secondName
      */
-    public function __construct($email, $firstName = null, $secondName = null)
+    public function __construct(string $email, ?string $firstName = null, ?string $secondName = null)
     {
         $this->email     = $email;
         $this->firstName = $firstName;
@@ -34,7 +34,7 @@ class Customer implements Arrayable
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'email'      => $this->email,

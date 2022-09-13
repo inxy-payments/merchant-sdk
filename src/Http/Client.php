@@ -8,7 +8,7 @@ use Psr\Http\Message\UriInterface;
 
 class Client extends GuzzleClient
 {
-    const ApiPrefix = 'api/';
+    private const ApiPrefix = 'api/';
 
     /**
      * @var string
@@ -20,7 +20,7 @@ class Client extends GuzzleClient
      * @param string $apiToken
      * @param string $apiVersion
      */
-    public function __construct($url, $apiToken, $apiVersion)
+    public function __construct(string $url, string $apiToken, string $apiVersion)
     {
         $this->apiVersion = $apiVersion;
 
@@ -38,7 +38,7 @@ class Client extends GuzzleClient
      * @param array               $options
      * @return ResponseInterface
      */
-    public function post($uri, array $options = [])
+    public function post($uri, array $options = []): ResponseInterface
     {
         return parent::post(self::ApiPrefix . $this->apiVersion . $uri, $options);
     }

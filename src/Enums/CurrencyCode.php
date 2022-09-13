@@ -4,11 +4,11 @@ namespace INXY\Payments\Merchant\Enums;
 
 class CurrencyCode
 {
-    const BTC  = 'BTC';
-    const LTC  = 'LTC';
-    const DOGE = 'DOGE';
-    const ETH  = 'ETH';
-    const USDT = 'USDT';
-    const USDC = 'USDC';
-    const DAI  = 'DAI';
+    public const BTC  = 'BTC';
+    public const LTC  = 'LTC';
+    public const DOGE = 'DOGE';
+    public const ETH  = 'ETH';
+    public const USDT = 'USDT';
+    public const USDC = 'USDC';
+    public const DAI  = 'DAI';
 }

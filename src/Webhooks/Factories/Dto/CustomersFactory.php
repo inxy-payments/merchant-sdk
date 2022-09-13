@@ -13,7 +13,7 @@ class CustomersFactory
      * @param stdClass $customer
      * @return Customer
      */
-    public static function create(stdClass $customer)
+    public static function create(stdClass $customer): Customer
     {
         if (!property_exists($customer, 'object') || $customer->object !== ObjectName::Customer) {
             throw new InvalidArgumentException('Customer param must be object with name customer');

@@ -26,7 +26,7 @@ class MerchantSDK
      * @param SessionRequest $request
      * @return SessionResponse
      */
-    public function createSession(SessionRequest $request)
+    public function createSession(SessionRequest $request): SessionResponse
     {
         return $this->api->sessions->create($request);
     }

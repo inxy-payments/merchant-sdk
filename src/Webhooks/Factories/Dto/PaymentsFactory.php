@@ -13,7 +13,7 @@ class PaymentsFactory
      * @param stdClass $payment
      * @return Payment
      */
-    public static function create(stdClass $payment)
+    public static function create(stdClass $payment): Payment
     {
         if (!property_exists($payment, 'object') || $payment->object !== ObjectName::Payment) {
             throw new InvalidArgumentException('Payment param must be object with name payment');

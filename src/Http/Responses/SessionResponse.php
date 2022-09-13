@@ -12,7 +12,7 @@ class SessionResponse
     /**
      * @param string $redirectUri
      */
-    public function __construct($redirectUri)
+    public function __construct(string $redirectUri)
     {
         $this->redirectUri = $redirectUri;
     }
@@ -20,7 +20,7 @@ class SessionResponse
     /**
      * @return string
      */
-    public function getRedirectUri()
+    public function getRedirectUri(): string
     {
         return $this->redirectUri;
     }
