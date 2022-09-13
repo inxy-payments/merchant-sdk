@@ -1,5 +1,5 @@
 {
-  "name": "apvalkov/merchant-sdk",
+  "name": "inxy-payments/merchant-sdk",
   "description": "SDK for INXY Payments merchant api",
   "type": "library",
   "license": "MIT",
