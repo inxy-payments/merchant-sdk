@@ -4,5 +4,5 @@ namespace INXY\Payments\Merchant\Enums;
 
 class ApiVersion
 {
-    public const v1 = 'v1';
+    const v1 = 'v1';
 }

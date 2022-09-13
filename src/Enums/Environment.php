@@ -4,6 +4,6 @@ namespace INXY\Payments\Merchant\Enums;
 
 class Environment
 {
-    public const Production = 'production';
-    public const Sandbox    = 'sandbox';
+    const Production = 'production';
+    const Sandbox    = 'sandbox';
 }

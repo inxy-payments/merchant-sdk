@@ -24,7 +24,7 @@ class Customer implements Arrayable
      * @param string|null $firstName
      * @param string|null $secondName
      */
-    public function __construct(string $email, ?string $firstName = null, ?string $secondName = null)
+    public function __construct(string $email, string $firstName = null, string $secondName = null)
     {
         $this->email     = $email;
         $this->firstName = $firstName;

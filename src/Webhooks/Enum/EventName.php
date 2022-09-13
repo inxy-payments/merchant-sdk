@@ -4,9 +4,9 @@ namespace INXY\Payments\Merchant\Webhooks\Enum;
 
 class EventName
 {
-    public const PaymentsInit                 = 'payments.init';
-    public const PaymentsExpired              = 'payments.expired';
-    public const PaymentsCanceled             = 'payments.canceled';
-    public const PaymentsWaitingConfirmations = 'payments.waiting_confirmations';
-    public const PaymentsReceived             = 'payments.received';
+    const PaymentsInit                 = 'payments.init';
+    const PaymentsExpired              = 'payments.expired';
+    const PaymentsCanceled             = 'payments.canceled';
+    const PaymentsWaitingConfirmations = 'payments.waiting_confirmations';
+    const PaymentsReceived             = 'payments.received';
 }

@@ -52,7 +52,7 @@ class SessionRequest extends Request
     /**
      * @param string $orderId
      */
-    public function setOrderId(string $orderId): void
+    public function setOrderId(string $orderId)
     {
         $this->orderId = $orderId;
     }
@@ -60,7 +60,7 @@ class SessionRequest extends Request
     /**
      * @param array $cryptocurrencies
      */
-    public function setCryptocurrencies(array $cryptocurrencies): void
+    public function setCryptocurrencies(array $cryptocurrencies)
     {
         $this->cryptocurrencies = $cryptocurrencies;
     }
@@ -68,7 +68,7 @@ class SessionRequest extends Request
     /**
      * @param string $postbackUrl
      */
-    public function setPostbackUrl(string $postbackUrl): void
+    public function setPostbackUrl(string $postbackUrl)
     {
         $this->postbackUrl = $postbackUrl;
     }
@@ -76,7 +76,7 @@ class SessionRequest extends Request
     /**
      * @param string $successUrl
      */
-    public function setSuccessUrl(string $successUrl): void
+    public function setSuccessUrl(string $successUrl)
     {
         $this->successUrl = $successUrl;
     }
@@ -84,7 +84,7 @@ class SessionRequest extends Request
     /**
      * @param string $cancelUrl
      */
-    public function setCancelUrl(string $cancelUrl): void
+    public function setCancelUrl(string $cancelUrl)
     {
         $this->cancelUrl = $cancelUrl;
     }
@@ -92,7 +92,7 @@ class SessionRequest extends Request
     /**
      * @param Customer $customer
      */
-    public function setCustomer(Customer $customer): void
+    public function setCustomer(Customer $customer)
     {
         $this->customer = $customer;
     }

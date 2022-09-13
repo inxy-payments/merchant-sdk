@@ -26,7 +26,7 @@ class Config
      * @param string      $apiKey
      * @param string|null $apiVersion
      */
-    public function __construct(string $environment, string $apiKey, ?string $apiVersion = null)
+    public function __construct(string $environment, string $apiKey, string $apiVersion = null)
     {
         $this->url        = $environment === Environment::Production ? ApiUrl::Production : ApiUrl::Sandbox;
         $this->apiKey     = $apiKey;
