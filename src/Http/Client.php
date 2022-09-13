@@ -8,7 +8,7 @@ use Psr\Http\Message\UriInterface;
 
 class Client extends GuzzleClient
 {
-    private const ApiPrefix = 'api/';
+    const ApiPrefix = 'api/';
 
     /**
      * @var string
