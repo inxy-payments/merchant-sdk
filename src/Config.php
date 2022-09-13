@@ -26,17 +26,17 @@ class Config
      * @param string      $apiKey
      * @param string|null $apiVersion
      */
-    public function __construct($environment, $apiKey, $apiVersion = null)
+    public function __construct(string $environment, string $apiKey, string $apiVersion = null)
     {
         $this->url        = $environment === Environment::Production ? ApiUrl::Production : ApiUrl::Sandbox;
         $this->apiKey     = $apiKey;
-        $this->apiVersion = $apiVersion === null ? ApiVersion::v1 : $apiVersion;
+        $this->apiVersion = $apiVersion ?? ApiVersion::v1;
     }
 
     /**
      * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -44,7 +44,7 @@ class Config
     /**
      * @return string
      */
-    public function getApiKey()
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
@@ -52,7 +52,7 @@ class Config
     /**
      * @return string
      */
-    public function getApiVersion()
+    public function getApiVersion(): string
     {
         return $this->apiVersion;
     }

@@ -13,7 +13,7 @@ class PaymentIntentsFactory
      * @param stdClass $paymentIntent
      * @return PaymentIntent
      */
-    public static function create(stdClass $paymentIntent)
+    public static function create(stdClass $paymentIntent): PaymentIntent
     {
         if (!property_exists($paymentIntent, 'object') || $paymentIntent->object !== ObjectName::PaymentIntent) {
             throw new InvalidArgumentException('Payment intent param must be object with name payment_intent');

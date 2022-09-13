@@ -12,7 +12,7 @@ class Sessions extends ApiResource
      * @param SessionRequest $request
      * @return SessionResponse
      */
-    public function create(SessionRequest $request)
+    public function create(SessionRequest $request): SessionResponse
     {
         $response = $this->client->post(Route::SessionsCreate, [
             'json' => $request->toArray()

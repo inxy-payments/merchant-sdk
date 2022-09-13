@@ -12,26 +12,26 @@ class Validator
     /**
      * @param string $secretKey
      */
-    public function __construct($secretKey)
+    public function __construct(string $secretKey)
     {
         $this->secretKey = $secretKey;
     }
 
     /**
-     * @param $payload
-     * @param $signedHash
+     * @param string $payload
+     * @param string $signedHash
      * @return bool
      */
-    public function isValid($payload, $signedHash)
+    public function isValid(string $payload, string $signedHash): bool
     {
         return hash_equals($signedHash, $this->hash($payload));
     }
 
     /**
-     * @param $payload
+     * @param string $payload
      * @return string
      */
-    private function hash($payload)
+    private function hash(string $payload): string
     {
         return hash_hmac('sha256', $payload, $this->secretKey);
     }

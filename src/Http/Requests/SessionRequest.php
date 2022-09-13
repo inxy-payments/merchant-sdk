@@ -43,7 +43,7 @@ class SessionRequest extends Request
      * @param float  $fiatAmount
      * @param string $orderName
      */
-    public function __construct($fiatAmount, $orderName)
+    public function __construct(float $fiatAmount, string $orderName)
     {
         $this->fiatAmount = $fiatAmount;
         $this->orderName  = $orderName;
@@ -52,7 +52,7 @@ class SessionRequest extends Request
     /**
      * @param string $orderId
      */
-    public function setOrderId($orderId)
+    public function setOrderId(string $orderId)
     {
         $this->orderId = $orderId;
     }
@@ -68,7 +68,7 @@ class SessionRequest extends Request
     /**
      * @param string $postbackUrl
      */
-    public function setPostbackUrl($postbackUrl)
+    public function setPostbackUrl(string $postbackUrl)
     {
         $this->postbackUrl = $postbackUrl;
     }
@@ -76,7 +76,7 @@ class SessionRequest extends Request
     /**
      * @param string $successUrl
      */
-    public function setSuccessUrl($successUrl)
+    public function setSuccessUrl(string $successUrl)
     {
         $this->successUrl = $successUrl;
     }
@@ -84,7 +84,7 @@ class SessionRequest extends Request
     /**
      * @param string $cancelUrl
      */
-    public function setCancelUrl($cancelUrl)
+    public function setCancelUrl(string $cancelUrl)
     {
         $this->cancelUrl = $cancelUrl;
     }
@@ -100,7 +100,7 @@ class SessionRequest extends Request
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'fiat_amount'      => $this->fiatAmount,

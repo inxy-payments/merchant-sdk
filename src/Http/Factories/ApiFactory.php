@@ -12,7 +12,7 @@ class ApiFactory
      * @param Config $config
      * @return Api
      */
-    public static function createApi(Config $config)
+    public static function createApi(Config $config): Api
     {
         $client = new Client($config->getUrl(), $config->getApiKey(), $config->getApiVersion());
 
