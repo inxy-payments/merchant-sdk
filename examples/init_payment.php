@@ -26,6 +26,9 @@ $sessionRequest->setCancelUrl('https://example.com/cancel');
 $sessionRequest->setSuccessUrl('https://example.com/success');
 $sessionRequest->setCustomer($customer);
 
-$sessionResponse = $merchantSDK->createSession($sessionRequest);
+try {
+    $sessionResponse = $merchantSDK->createSession($sessionRequest);
+} catch (\GuzzleHttp\Exception\GuzzleException $e) {
+}
 
 header('Location: ' . $sessionResponse->getRedirectUri());
