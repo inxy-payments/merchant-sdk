@@ -2,6 +2,7 @@
 
 namespace INXY\Payments\Merchant;
 
+use GuzzleHttp\Exception\GuzzleException;
 use INXY\Payments\Merchant\Http\Api\Api;
 use INXY\Payments\Merchant\Http\Factories\ApiFactory;
 use INXY\Payments\Merchant\Http\Requests\SessionRequest;
@@ -25,6 +26,7 @@ class MerchantSDK
     /**
      * @param SessionRequest $request
      * @return SessionResponse
+     * @throws GuzzleException
      */
     public function createSession(SessionRequest $request): SessionResponse
     {
