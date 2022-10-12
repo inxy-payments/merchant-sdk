@@ -9,4 +9,7 @@ class EventName
     const PaymentsCanceled             = 'payments.canceled';
     const PaymentsWaitingConfirmations = 'payments.waiting_confirmations';
     const PaymentsReceived             = 'payments.received';
+    const SubscriptionsCreated         = 'subscriptions.created';
+    const SubscriptionsUpdated         = 'subscriptions.updated';
+    const SubscriptionsDeleted         = 'subscriptions.deleted';
 }

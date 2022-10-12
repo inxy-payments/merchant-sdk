@@ -3,21 +3,20 @@
 namespace INXY\Payments\Merchant\Webhooks\Factories;
 
 use InvalidArgumentException;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentReceivedData;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentReceivedWebhook;
+use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\SubscriptionCreatedData;
+use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\SubscriptionCreatedWebhook;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentIntentsFactory;
-use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\SessionsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\SubscriptionsFactory;
 use stdClass;
 
-class PaymentsReceivedWebhookFactory
+class SubscriptionsCreatedWebhookFactory
 {
     /**
      * @param stdClass $webhook
-     * @return PaymentReceivedWebhook
+     * @return SubscriptionCreatedWebhook
      */
     public static function create(stdClass $webhook)
     {
@@ -25,21 +24,17 @@ class PaymentsReceivedWebhookFactory
             throw new InvalidArgumentException('Webhook param must be object with name webhook');
         }
 
-        if (!property_exists($webhook, 'name') || $webhook->name !== EventName::PaymentsReceived) {
+        if (!property_exists($webhook, 'name') || $webhook->name !== EventName::SubscriptionsCreated) {
             throw new InvalidArgumentException('Undefined webhook name');
         }
 
-        $webhookData = new PaymentReceivedData();
+        $webhookData = new SubscriptionCreatedData();
 
         $webhookData->session       = SessionsFactory::create($webhook->data->session);
         $webhookData->paymentIntent = PaymentIntentsFactory::create($webhook->data->payment_intent);
-        $webhookData->payment       = PaymentsFactory::create($webhook->data->payment);
+        $webhookData->subscription = SubscriptionsFactory::create($webhook->data->subscription);
 
-        if ($webhook->data->subscription !== null) {
-            $webhookData->subscription = SubscriptionsFactory::create($webhook->data->subscription);
-        }
-
-        $webhookDto = new PaymentReceivedWebhook($webhook->id, $webhook->object, $webhook->name);
+        $webhookDto = new SubscriptionCreatedWebhook($webhook->id, $webhook->object, $webhook->name);
 
         $webhookDto->data = $webhookData;
 

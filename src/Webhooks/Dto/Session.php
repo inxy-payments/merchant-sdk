@@ -6,7 +6,7 @@ namespace INXY\Payments\Merchant\Webhooks\Dto;
 class Session
 {
     /**
-     * @var int
+     * @var string
      */
     public $id;
     /**

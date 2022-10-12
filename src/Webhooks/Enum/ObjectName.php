@@ -9,4 +9,5 @@ class ObjectName
     const PaymentIntent = 'payment_intent';
     const Payment       = 'payment';
     const Webhook       = 'webhook';
+    const Subscription  = 'subscription';
 }
