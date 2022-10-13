@@ -11,7 +11,7 @@ use INXY\Payments\Merchant\Webhooks\Factories\Dto\SessionsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\SubscriptionsFactory;
 use stdClass;
 
-class SubscriptionDeletedWebhookFactory
+class SubscriptionsDeletedWebhookFactory
 {
     /**
      * @param stdClass $webhook

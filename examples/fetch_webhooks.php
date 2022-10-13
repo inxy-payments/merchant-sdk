@@ -12,7 +12,7 @@ use INXY\Payments\Merchant\Webhooks\Factories\PaymentsCanceledWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Enum\PaymentIntentStatus;
 use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsCreatedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsUpdatedWebhookFactory;
-use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionDeletedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsDeletedWebhookFactory;
 
 function handleWebhooks($request) {
     $secretKey  = 'Your secret key here';
@@ -117,7 +117,7 @@ function handleSubscriptionsUpdatedWebhook(stdClass $webhookData) {
 }
 
 function handleSubscriptionsDeletedWebhook(stdClass $webhookData) {
-    $webhook = SubscriptionDeletedWebhookFactory::create($webhookData);
+    $webhook = SubscriptionsDeletedWebhookFactory::create($webhookData);
 
     /** Your code here */
 }

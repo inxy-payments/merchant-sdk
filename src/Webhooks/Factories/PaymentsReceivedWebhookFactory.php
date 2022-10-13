@@ -34,10 +34,7 @@ class PaymentsReceivedWebhookFactory
         $webhookData->session       = SessionsFactory::create($webhook->data->session);
         $webhookData->paymentIntent = PaymentIntentsFactory::create($webhook->data->payment_intent);
         $webhookData->payment       = PaymentsFactory::create($webhook->data->payment);
-
-        if ($webhook->data->subscription !== null) {
-            $webhookData->subscription = SubscriptionsFactory::create($webhook->data->subscription);
-        }
+        $webhookData->subscription  = $webhook->data->subscription !== null ? SubscriptionsFactory::create($webhook->data->subscription) : null;
 
         $webhookDto = new PaymentReceivedWebhook($webhook->id, $webhook->object, $webhook->name);
 
