@@ -2,7 +2,7 @@
 
 namespace INXY\Payments\Merchant\Webhooks\Dto;
 
-class Payment
+class Subscription
 {
     /**
      * @var string
@@ -15,15 +15,15 @@ class Payment
     /**
      * @var string
      */
+    public $name;
+    /**
+     * @var string
+     */
     public $status;
     /**
      * @var string
      */
     public $currencyCode;
-    /**
-     * @var float
-     */
-    public $amount;
     /**
      * @var float
      */
@@ -33,7 +33,23 @@ class Payment
      */
     public $fiatCurrencyCode;
     /**
+     * @var string
+     */
+    public $interval;
+    /**
+     * @var int
+     */
+    public $intervalCount;
+    /**
+     * @var int
+     */
+    public $nextPaymentDate;
+    /**
      * @var int
      */
     public $createdDate;
+    /**
+     * @var int|null
+     */
+    public $deletedDate;
 }

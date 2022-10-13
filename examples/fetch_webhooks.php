@@ -1,5 +1,7 @@
 <?php
 
+require_once('vendor/autoload.php');
+
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Validator;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
@@ -8,6 +10,9 @@ use INXY\Payments\Merchant\Webhooks\Factories\PaymentsReceivedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsExpiredWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsCanceledWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Enum\PaymentIntentStatus;
+use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsCreatedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsUpdatedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionDeletedWebhookFactory;
 
 function handleWebhooks($request) {
     $secretKey  = 'Your secret key here';
@@ -37,6 +42,15 @@ function handleWebhooks($request) {
             break;
         case EventName::PaymentsExpired:
             handlePaymentsExpiredWebhook($data);
+            break;
+        case EventName::SubscriptionsCreated:
+            handleSubscriptionsCreatedWebhook($data);
+            break;
+        case EventName::SubscriptionsUpdated:
+            handleSubscriptionsUpdatedWebhook($data);
+            break;
+        case EventName::SubscriptionsDeleted:
+            handleSubscriptionsDeletedWebhook($data);
             break;
         default:
             throw new InvalidArgumentException('Undefined webhook name');
@@ -86,6 +100,24 @@ function handlePaymentsCanceledWebhook(stdClass $webhookData) {
 
 function handlePaymentsExpiredWebhook(stdClass $webhookData) {
     $webhook = PaymentsExpiredWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handleSubscriptionsCreatedWebhook(stdClass $webhookData) {
+    $webhook = SubscriptionsCreatedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handleSubscriptionsUpdatedWebhook(stdClass $webhookData) {
+    $webhook = SubscriptionsUpdatedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handleSubscriptionsDeletedWebhook(stdClass $webhookData) {
+    $webhook = SubscriptionDeletedWebhookFactory::create($webhookData);
 
     /** Your code here */
 }

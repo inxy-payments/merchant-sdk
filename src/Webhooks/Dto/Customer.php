@@ -5,7 +5,7 @@ namespace INXY\Payments\Merchant\Webhooks\Dto;
 class Customer
 {
     /**
-     * @var int
+     * @var string
      */
     public $id;
     /**
