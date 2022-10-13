@@ -3,6 +3,7 @@
 namespace INXY\Payments\Merchant\Http\Requests;
 
 use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
+use INXY\Payments\Merchant\Http\Requests\Dto\Subscription;
 
 class SessionRequest extends Request
 {
@@ -38,6 +39,10 @@ class SessionRequest extends Request
      * @var Customer|null
      */
     private $customer;
+    /**
+     * @var Subscription|null
+     */
+    private $subscription;
 
     /**
      * @param float  $fiatAmount
@@ -98,6 +103,15 @@ class SessionRequest extends Request
     }
 
     /**
+     * @param Subscription $subscription
+     * @return void
+     */
+    public function setSubscription(Subscription $subscription)
+    {
+        $this->subscription = $subscription;
+    }
+
+    /**
      * @return array
      */
     public function toArray(): array
@@ -111,6 +125,7 @@ class SessionRequest extends Request
             'success_url'      => $this->successUrl,
             'cancel_url'       => $this->cancelUrl,
             'customer'         => $this->customer ? $this->customer->toArray() : null,
+            'subscription'     => $this->subscription ? $this->subscription->toArray() : null,
         ];
     }
 }

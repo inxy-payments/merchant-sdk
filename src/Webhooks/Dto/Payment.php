@@ -5,7 +5,7 @@ namespace INXY\Payments\Merchant\Webhooks\Dto;
 class Payment
 {
     /**
-     * @var int
+     * @var string
      */
     public $id;
     /**

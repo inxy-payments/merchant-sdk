@@ -3,23 +3,23 @@
 namespace INXY\Payments\Merchant\Webhooks\Factories;
 
 use InvalidArgumentException;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentCanceledData;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentReceivedData;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentCanceledWebhook;
+use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentReceivedWebhook;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentIntentsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\SessionsFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\Dto\SubscriptionsFactory;
 use stdClass;
 
 class PaymentsReceivedWebhookFactory
 {
     /**
      * @param stdClass $webhook
-     * @return PaymentCanceledWebhook
+     * @return PaymentReceivedWebhook
      */
-    public static function create(stdClass $webhook): PaymentCanceledWebhook
+    public static function create(stdClass $webhook): PaymentReceivedWebhook
     {
         if (!property_exists($webhook, 'object') || $webhook->object !== ObjectName::Webhook) {
             throw new InvalidArgumentException('Webhook param must be object with name webhook');
@@ -34,8 +34,9 @@ class PaymentsReceivedWebhookFactory
         $webhookData->session       = SessionsFactory::create($webhook->data->session);
         $webhookData->paymentIntent = PaymentIntentsFactory::create($webhook->data->payment_intent);
         $webhookData->payment       = PaymentsFactory::create($webhook->data->payment);
+        $webhookData->subscription  = $webhook->data->subscription !== null ? SubscriptionsFactory::create($webhook->data->subscription) : null;
 
-        $webhookDto = new PaymentCanceledWebhook($webhook->id, $webhook->object, $webhook->name);
+        $webhookDto = new PaymentReceivedWebhook($webhook->id, $webhook->object, $webhook->name);
 
         $webhookDto->data = $webhookData;
 
