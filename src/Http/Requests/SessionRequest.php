@@ -106,7 +106,7 @@ class SessionRequest extends Request
      * @param Subscription $subscription
      * @return void
      */
-    public function setSubscription(Subscription  $subscription)
+    public function setSubscription(Subscription $subscription)
     {
         $this->subscription = $subscription;
     }
