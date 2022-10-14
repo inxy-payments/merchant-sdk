@@ -2,15 +2,15 @@
 
 require_once('vendor/autoload.php');
 
-use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactoryTest;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Validator;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
-use INXY\Payments\Merchant\Webhooks\Factories\PaymentsWaitingConfirmationsWebhookFactoryTest;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsWaitingConfirmationsWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsReceivedWebhookFactory;
-use INXY\Payments\Merchant\Webhooks\Factories\PaymentsExpiredWebhookFactoryTest;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsExpiredWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsCanceledWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Enum\PaymentIntentStatus;
-use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsCreatedWebhookFactoryTest;
+use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsCreatedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsUpdatedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsDeletedWebhookFactory;
 
@@ -58,7 +58,7 @@ function handleWebhooks($request) {
 }
 
 function handlePaymentsInitWebhook(stdClass $webhookData) {
-    $webhook = PaymentsInitWebhookFactoryTest::create($webhookData);
+    $webhook = PaymentsInitWebhookFactory::create($webhookData);
 
     if ($webhook->data->paymentIntent->status === PaymentIntentStatus::WaitingPayment) {
         /** Waiting first payment */
@@ -73,7 +73,7 @@ function handlePaymentsInitWebhook(stdClass $webhookData) {
 }
 
 function handlePaymentsWaitingConfirmationsWebhook(stdClass $webhookData) {
-    $webhook = PaymentsWaitingConfirmationsWebhookFactoryTest::create($webhookData);
+    $webhook = PaymentsWaitingConfirmationsWebhookFactory::create($webhookData);
 
     /** Your code here */
 }
@@ -99,13 +99,13 @@ function handlePaymentsCanceledWebhook(stdClass $webhookData) {
 }
 
 function handlePaymentsExpiredWebhook(stdClass $webhookData) {
-    $webhook = PaymentsExpiredWebhookFactoryTest::create($webhookData);
+    $webhook = PaymentsExpiredWebhookFactory::create($webhookData);
 
     /** Your code here */
 }
 
 function handleSubscriptionsCreatedWebhook(stdClass $webhookData) {
-    $webhook = SubscriptionsCreatedWebhookFactoryTest::create($webhookData);
+    $webhook = SubscriptionsCreatedWebhookFactory::create($webhookData);
 
     /** Your code here */
 }
