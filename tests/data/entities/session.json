@@ -1,0 +1,17 @@
+{
+  "id": "ses_kb4ZV2wPV5YGvJ6",
+  "object": "session",
+  "status": "active",
+  "customer": {
+    "id": "cus_OZxelV2Bg5EoAQ0",
+    "object": "customer",
+    "email": "john.doe@example.com",
+    "first_name": "John",
+    "last_name": "Doe"
+  },
+  "order_id": "test_order",
+  "order_name": "Test order",
+  "fiat_amount": 1.5,
+  "created_date": 1665645203,
+  "fiat_currency_code": "USD"
+}

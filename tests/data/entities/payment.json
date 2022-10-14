@@ -1,0 +1,10 @@
+{
+  "id": "pay_WNgOL28rEdX47wP",
+  "amount": 1.5,
+  "object": "payment",
+  "status": "finished",
+  "fiat_amount": 1.5,
+  "created_date": 1665645393,
+  "currency_code": "USDC",
+  "fiat_currency_code": "USD"
+}

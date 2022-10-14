@@ -31,7 +31,7 @@ class PaymentsExpiredWebhookFactory
         $webhookData = new PaymentExpiredData();
 
         $webhookData->session       = SessionsFactory::create($webhook->data->session);
-        $webhookData->paymentIntent = $webhook->data->paymentIntent ? PaymentIntentsFactory::create($webhook->data->payment_intent) : null;
+        $webhookData->paymentIntent = $webhook->data->payment_intent ? PaymentIntentsFactory::create($webhook->data->payment_intent) : null;
         $webhookData->payment       = $webhook->data->payment ? PaymentsFactory::create($webhook->data->payment) : null;
 
         $webhookDto = new PaymentExpiredWebhook($webhook->id, $webhook->object, $webhook->name);

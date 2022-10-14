@@ -1,12 +1,14 @@
 <?php
 
-use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
+require_once('vendor/autoload.php');
+
 use INXY\Payments\Merchant\Webhooks\Validator;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsWaitingConfirmationsWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsReceivedWebhookFactory;
-use INXY\Payments\Merchant\Webhooks\Factories\PaymentsExpiredWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsCanceledWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsExpiredWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Enum\PaymentIntentStatus;
 use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsCreatedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsUpdatedWebhookFactory;
