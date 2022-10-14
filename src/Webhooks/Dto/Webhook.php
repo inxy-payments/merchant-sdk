@@ -18,11 +18,11 @@ class Webhook
     public $name;
 
     /**
-     * @param int    $id
+     * @param string $id
      * @param string $object
      * @param string $name
      */
-    public function __construct(int $id, string $object, string $name)
+    public function __construct(string $id, string $object, string $name)
     {
         $this->id     = $id;
         $this->object = $object;
