@@ -2,27 +2,26 @@
 
 namespace INXY\Payments\Merchant\Tests\Webhooks\Factories;
 
+use JsonException;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
 abstract class FactoryTest extends TestCase
 {
-    /**
-     * @var stdClass
-     */
-    protected $payload;
+    protected stdClass $payload;
 
     /**
      * @return void
+     * @throws JsonException
      */
     public function setUp(): void
     {
         $payload       = file_get_contents($this->payloadFilePath());
-        $this->payload = json_decode($payload, false);
+        $this->payload = json_decode($payload, false, 512, JSON_THROW_ON_ERROR);
     }
 
     /**
      * @return string
      */
-    abstract protected function payloadFilePath();
+    abstract protected function payloadFilePath(): string;
 }

@@ -6,7 +6,6 @@ use INXY\Payments\Merchant\Tests\Webhooks\Factories\FactoryTest;
 use INXY\Payments\Merchant\Webhooks\Dto\PaymentIntent;
 use INXY\Payments\Merchant\Webhooks\Dto\Session;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentInitData;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentInitWebhook;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
@@ -16,11 +15,10 @@ class PaymentsInitWebhookFactoryTest extends FactoryTest
     /**
      * @return void
      */
-    public function testWebhookCreate()
+    public function testWebhookCreate(): void
     {
         $webhook = PaymentsInitWebhookFactory::create($this->payload);
 
-        $this->assertInstanceOf(PaymentInitWebhook::class, $webhook);
         $this->assertSame('wh_nBpLZ5Nr35Y9P6o', $webhook->id);
         $this->assertSame(ObjectName::Webhook, $webhook->object);
         $this->assertSame(EventName::PaymentsInit, $webhook->name);
@@ -32,7 +30,7 @@ class PaymentsInitWebhookFactoryTest extends FactoryTest
     /**
      * @return string
      */
-    protected function payloadFilePath()
+    protected function payloadFilePath(): string
     {
         return 'tests/data/webhooks/payments.init.json';
     }

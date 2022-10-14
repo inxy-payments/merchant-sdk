@@ -7,7 +7,7 @@ use INXY\Payments\Merchant\Enums\CurrencyCode;
 
 class SessionRequestOrderTest extends TestCase
 {
-    private static $sessionRequestExample = [
+    private static array $sessionRequestExample = [
         'fiat_amount'      => 1.0,
         'order_name'       => 'Test Order',
         'order_id'         => 'test_order',
@@ -29,7 +29,7 @@ class SessionRequestOrderTest extends TestCase
     /**
      * @return void
      */
-    public function testOrderRequestCreate()
+    public function testOrderRequestCreate(): void
     {
         $orderAmountInUSD = 1.0;
         $orderName        = 'Test Order';

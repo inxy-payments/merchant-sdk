@@ -11,7 +11,7 @@ class SubscriptionsFactoryTest extends FactoryTest
     /**
      * @return void
      */
-    public function testSessionCreate()
+    public function testSessionCreate(): void
     {
         $subscription = SubscriptionsFactory::create($this->payload);
 
@@ -32,7 +32,7 @@ class SubscriptionsFactoryTest extends FactoryTest
     /**
      * @return string
      */
-    protected function payloadFilePath()
+    protected function payloadFilePath(): string
     {
         return 'tests/data/entities/subscription.json';
     }

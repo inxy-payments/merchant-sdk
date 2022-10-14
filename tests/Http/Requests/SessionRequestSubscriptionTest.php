@@ -9,7 +9,7 @@ use INXY\Payments\Merchant\Http\Requests\Enums\SubscriptionIntervalName;
 
 class SessionRequestSubscriptionTest extends TestCase
 {
-    private static $sessionRequestExample = [
+    private static array $sessionRequestExample = [
         'fiat_amount'      => 1.0,
         'order_name'       => 'Test Subscription',
         'order_id'         => 'test_subscription',
@@ -35,7 +35,7 @@ class SessionRequestSubscriptionTest extends TestCase
     /**
      * @return void
      */
-    public function testSubscriptionRequestCreate()
+    public function testSubscriptionRequestCreate(): void
     {
         $orderAmountInUSD = 1.0;
         $orderName        = 'Test Subscription';

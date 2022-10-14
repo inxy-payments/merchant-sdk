@@ -11,7 +11,7 @@ class CustomersFactoryTest extends FactoryTest
     /**
      * @return void
      */
-    public function testCustomerCreate()
+    public function testCustomerCreate(): void
     {
         $customer = CustomersFactory::create($this->payload);
 
@@ -25,7 +25,7 @@ class CustomersFactoryTest extends FactoryTest
     /**
      * @return string
      */
-    protected function payloadFilePath()
+    protected function payloadFilePath(): string
     {
         return 'tests/data/entities/customer.json';
     }

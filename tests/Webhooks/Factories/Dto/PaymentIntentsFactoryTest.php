@@ -11,7 +11,7 @@ class PaymentIntentsFactoryTest extends FactoryTest
     /**
      * @return void
      */
-    public function testPaymentIntentCreate()
+    public function testPaymentIntentCreate(): void
     {
         $paymentIntent = PaymentIntentsFactory::create($this->payload);
 
@@ -34,7 +34,7 @@ class PaymentIntentsFactoryTest extends FactoryTest
     /**
      * @return string
      */
-    protected function payloadFilePath()
+    protected function payloadFilePath(): string
     {
         return 'tests/data/entities/payment_intent.json';
     }

@@ -11,7 +11,7 @@ class PaymentsFactoryTest extends FactoryTest
     /**
      * @return void
      */
-    public function testPaymentCreate()
+    public function testPaymentCreate(): void
     {
         $payment = PaymentsFactory::create($this->payload);
 
@@ -28,7 +28,7 @@ class PaymentsFactoryTest extends FactoryTest
     /**
      * @return string
      */
-    protected function payloadFilePath()
+    protected function payloadFilePath(): string
     {
         return 'tests/data/entities/payment.json';
     }

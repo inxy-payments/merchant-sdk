@@ -7,7 +7,6 @@ use INXY\Payments\Merchant\Webhooks\Dto\PaymentIntent;
 use INXY\Payments\Merchant\Webhooks\Dto\Session;
 use INXY\Payments\Merchant\Webhooks\Dto\Subscription;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\SubscriptionUpdatedData;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\SubscriptionUpdatedWebhook;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsUpdatedWebhookFactory;
@@ -17,11 +16,10 @@ class SubscriptionsUpdatedWebhookFactoryTest extends FactoryTest
     /**
      * @return void
      */
-    public function testWebhookCreate()
+    public function testWebhookCreate(): void
     {
         $webhook = SubscriptionsUpdatedWebhookFactory::create($this->payload);
 
-        $this->assertInstanceOf(SubscriptionUpdatedWebhook::class, $webhook);
         $this->assertSame('wh_W6n07dQQedxqmpB', $webhook->id);
         $this->assertSame(ObjectName::Webhook, $webhook->object);
         $this->assertSame(EventName::SubscriptionsUpdated, $webhook->name);
@@ -34,7 +32,7 @@ class SubscriptionsUpdatedWebhookFactoryTest extends FactoryTest
     /**
      * @return string
      */
-    protected function payloadFilePath()
+    protected function payloadFilePath(): string
     {
         return 'tests/data/webhooks/subscriptions.updated.json';
     }

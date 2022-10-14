@@ -11,7 +11,7 @@ class SessionsFactoryTest extends FactoryTest
     /**
      * @return void
      */
-    public function testSessionCreate()
+    public function testSessionCreate(): void
     {
         $session = SessionsFactory::create($this->payload);
 
@@ -31,7 +31,7 @@ class SessionsFactoryTest extends FactoryTest
     /**
      * @return string
      */
-    protected function payloadFilePath()
+    protected function payloadFilePath(): string
     {
         return 'tests/data/entities/session.json';
     }
