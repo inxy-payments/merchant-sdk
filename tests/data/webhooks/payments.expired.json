@@ -1,0 +1,45 @@
+{
+  "id": "wh_nBpLZ5Nr35Y9P6o",
+  "object": "webhook",
+  "name": "payments.expired",
+  "data": {
+    "payment": null,
+    "session": {
+      "id": "ses_kb4ZV2wPV5YGvJ6",
+      "object": "session",
+      "status": "expired",
+      "customer": {
+        "id": "cus_OZxelV2Bg5EoAQ0",
+        "email": "example@mail.com",
+        "object": "customer",
+        "last_name": "Doe",
+        "first_name": "John"
+      },
+      "order_id": "123",
+      "order_name": "Order #123",
+      "fiat_amount": 1,
+      "created_date": 1662470436,
+      "fiat_currency_code": "USD"
+    },
+    "payment_intent": {
+      "id": "pi_MvrKl2JNA29nkGB",
+      "amount": 1.0001,
+      "object": "payment_intent",
+      "status": "expired",
+      "customer": {
+        "id": "cus_OZxelV2Bg5EoAQ0",
+        "email": "example@mail.com",
+        "object": "customer",
+        "last_name": "Doe",
+        "first_name": "John"
+      },
+      "payments": [],
+      "fiat_amount": 1,
+      "paid_amount": 0,
+      "created_date": 1662470446,
+      "currency_code": "USDT",
+      "exchange_rate": 0.9999,
+      "paid_fiat_amount": 0
+    }
+  }
+}

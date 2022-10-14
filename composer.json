@@ -18,5 +18,13 @@
     "psr-4": {
       "INXY\\Payments\\Merchant\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "INXY\\Payments\\Merchant\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
   }
 }

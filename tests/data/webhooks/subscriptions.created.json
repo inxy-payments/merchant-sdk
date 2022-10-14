@@ -1,0 +1,58 @@
+{
+  "id": "wh_0JwYj2l7wDXeNn8",
+  "object": "webhook",
+  "name": "subscriptions.created",
+  "data": {
+    "session": {
+      "id": "ses_7vJaZ5m8O21EoY3",
+      "object": "session",
+      "status": "active",
+      "customer": {
+        "id": "cus_gP8N9l23JD36Lbm",
+        "email": "john.doe@example.com",
+        "object": "customer",
+        "last_name": "Doe",
+        "first_name": "John"
+      },
+      "order_id": "1234",
+      "order_name": "Premium subscription",
+      "fiat_amount": 1.5,
+      "created_date": 1665645049,
+      "fiat_currency_code": "USD"
+    },
+    "subscription": {
+      "id": "sub_yJGnv5794DNqlex",
+      "name": "Premium",
+      "object": "subscription",
+      "status": "active",
+      "interval": "month",
+      "fiat_amount": 1.5,
+      "created_date": 1665645392,
+      "deleted_date": null,
+      "currency_code": "USDC",
+      "interval_count": 1,
+      "next_payment_date": 1665619200,
+      "fiat_currency_code": "USD"
+    },
+    "payment_intent": {
+      "id": "pi_ZPvXVDRmWdOnwR4",
+      "amount": 1.5,
+      "object": "payment_intent",
+      "status": "waiting_payment",
+      "customer": {
+        "id": "cus_gP8N9l23JD36Lbm",
+        "email": "john.doe@example.com",
+        "object": "customer",
+        "last_name": "Doe",
+        "first_name": "John"
+      },
+      "payments": [],
+      "fiat_amount": 1.5,
+      "paid_amount": 0,
+      "created_date": 1665645103,
+      "currency_code": "USDC",
+      "exchange_rate": 1,
+      "paid_fiat_amount": 0
+    }
+  }
+}
