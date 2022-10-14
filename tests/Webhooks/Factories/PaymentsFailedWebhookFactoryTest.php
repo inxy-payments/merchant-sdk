@@ -22,7 +22,7 @@ class PaymentsFailedWebhookFactoryTest extends FactoryTest
         $webhook = PaymentsFailedWebhookFactory::create($this->payload);
 
         $this->assertInstanceOf(PaymentFailedWebhook::class, $webhook);
-        $this->assertSame('wh_nBpLZ5Nr35Y9P6o', $webhook->id);
+        $this->assertSame('wh_xXmV329qz2NYQMl', $webhook->id);
         $this->assertSame(ObjectName::Webhook, $webhook->object);
         $this->assertSame(EventName::PaymentsFailed, $webhook->name);
         $this->assertInstanceOf(PaymentFailedData::class, $webhook->data);
