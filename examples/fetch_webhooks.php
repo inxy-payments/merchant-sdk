@@ -2,6 +2,7 @@
 
 require_once('vendor/autoload.php');
 
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsFailedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Validator;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
@@ -42,6 +43,9 @@ function handleWebhooks($request) {
             break;
         case EventName::PaymentsExpired:
             handlePaymentsExpiredWebhook($data);
+            break;
+        case EventName::PaymentsFailed:
+            handlePaymentsFailedWebhook($data);
             break;
         case EventName::SubscriptionsCreated:
             handleSubscriptionsCreatedWebhook($data);
@@ -103,6 +107,13 @@ function handlePaymentsExpiredWebhook(stdClass $webhookData) {
 
     /** Your code here */
 }
+
+function handlePaymentsFailedWebhook(stdClass $webhookData) {
+    $webhook = PaymentsFailedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
 
 function handleSubscriptionsCreatedWebhook(stdClass $webhookData) {
     $webhook = SubscriptionsCreatedWebhookFactory::create($webhookData);
