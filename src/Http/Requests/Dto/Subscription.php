@@ -8,7 +8,7 @@ class Subscription implements Arrayable
 {
     private string $name;
     private string $interval;
-    private int $intervalCount;
+    private int    $intervalCount;
 
     /**
      * @param string $name
