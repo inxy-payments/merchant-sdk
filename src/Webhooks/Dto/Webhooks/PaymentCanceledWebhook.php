@@ -7,8 +7,5 @@ use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentCanceledData;
 
 class PaymentCanceledWebhook extends Webhook
 {
-    /**
-     * @var PaymentCanceledData
-     */
-    public $data;
+    public PaymentCanceledData $data;
 }

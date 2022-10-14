@@ -8,18 +8,9 @@ use INXY\Payments\Merchant\Enums\Environment;
 
 class Config
 {
-    /**
-     * @var string
-     */
-    private $url;
-    /**
-     * @var string
-     */
-    private $apiKey;
-    /**
-     * @var string
-     */
-    private $apiVersion;
+    private string $url;
+    private string $apiKey;
+    private string $apiVersion;
 
     /**
      * @param string      $environment

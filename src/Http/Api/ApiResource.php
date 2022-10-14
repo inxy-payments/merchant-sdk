@@ -6,10 +6,7 @@ use INXY\Payments\Merchant\Http\Client;
 
 class ApiResource
 {
-    /**
-     * @var Client
-     */
-    protected $client;
+    protected Client $client;
 
     /**
      * @param Client $client

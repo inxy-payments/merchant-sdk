@@ -7,8 +7,5 @@ use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentInitData;
 
 class PaymentInitWebhook extends Webhook
 {
-    /**
-     * @var PaymentInitData
-     */
-    public $data;
+    public PaymentInitData $data;
 }

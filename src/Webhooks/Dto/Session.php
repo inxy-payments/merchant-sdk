@@ -5,40 +5,13 @@ namespace INXY\Payments\Merchant\Webhooks\Dto;
 
 class Session
 {
-    /**
-     * @var int
-     */
-    public $id;
-    /**
-     * @var string
-     */
-    public $object;
-    /**
-     * @var string
-     */
-    public $status;
-    /**
-     * @var float
-     */
-    public $fiatAmount;
-    /**
-     * @var string
-     */
-    public $fiatCurrencyCode;
-    /**
-     * @var string
-     */
-    public $orderId;
-    /**
-     * @var string
-     */
-    public $orderName;
-    /**
-     * @var Customer
-     */
-    public $customer;
-    /**
-     * @var int
-     */
-    public $createdDate;
+    public string    $id;
+    public string    $object;
+    public string    $status;
+    public float     $fiatAmount;
+    public string    $fiatCurrencyCode;
+    public string    $orderName;
+    public int       $createdDate;
+    public ?string   $orderId = null;
+    public ?Customer $customer;
 }

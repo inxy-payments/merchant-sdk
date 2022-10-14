@@ -7,12 +7,6 @@ use INXY\Payments\Merchant\Webhooks\Dto\Session;
 
 class PaymentCanceledData
 {
-    /**
-     * @var Session
-     */
-    public $session;
-    /**
-     * @var PaymentIntent
-     */
-    public $paymentIntent;
+    public Session       $session;
+    public PaymentIntent $paymentIntent;
 }

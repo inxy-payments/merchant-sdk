@@ -3,41 +3,19 @@
 namespace INXY\Payments\Merchant\Http\Requests;
 
 use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
+use INXY\Payments\Merchant\Http\Requests\Dto\Subscription;
 
 class SessionRequest extends Request
 {
-    /**
-     * @var float
-     */
-    private $fiatAmount;
-    /**
-     * @var string
-     */
-    private $orderName;
-    /**
-     * @var string|null
-     */
-    private $orderId;
-    /**
-     * @var array|null
-     */
-    private $cryptocurrencies;
-    /**
-     * @var string|null
-     */
-    private $postbackUrl;
-    /**
-     * @var string|null
-     */
-    private $successUrl;
-    /**
-     * @var string|null
-     */
-    private $cancelUrl;
-    /**
-     * @var Customer|null
-     */
-    private $customer;
+    private float         $fiatAmount;
+    private string        $orderName;
+    private ?string       $orderId          = null;
+    private ?array        $cryptocurrencies = null;
+    private ?string       $postbackUrl      = null;
+    private ?string       $successUrl       = null;
+    private ?string       $cancelUrl        = null;
+    private ?Customer     $customer         = null;
+    private ?Subscription $subscription     = null;
 
     /**
      * @param float  $fiatAmount
@@ -52,7 +30,7 @@ class SessionRequest extends Request
     /**
      * @param string $orderId
      */
-    public function setOrderId(string $orderId)
+    public function setOrderId(string $orderId): void
     {
         $this->orderId = $orderId;
     }
@@ -60,7 +38,7 @@ class SessionRequest extends Request
     /**
      * @param array $cryptocurrencies
      */
-    public function setCryptocurrencies(array $cryptocurrencies)
+    public function setCryptocurrencies(array $cryptocurrencies): void
     {
         $this->cryptocurrencies = $cryptocurrencies;
     }
@@ -68,7 +46,7 @@ class SessionRequest extends Request
     /**
      * @param string $postbackUrl
      */
-    public function setPostbackUrl(string $postbackUrl)
+    public function setPostbackUrl(string $postbackUrl): void
     {
         $this->postbackUrl = $postbackUrl;
     }
@@ -76,7 +54,7 @@ class SessionRequest extends Request
     /**
      * @param string $successUrl
      */
-    public function setSuccessUrl(string $successUrl)
+    public function setSuccessUrl(string $successUrl): void
     {
         $this->successUrl = $successUrl;
     }
@@ -84,7 +62,7 @@ class SessionRequest extends Request
     /**
      * @param string $cancelUrl
      */
-    public function setCancelUrl(string $cancelUrl)
+    public function setCancelUrl(string $cancelUrl): void
     {
         $this->cancelUrl = $cancelUrl;
     }
@@ -92,9 +70,18 @@ class SessionRequest extends Request
     /**
      * @param Customer $customer
      */
-    public function setCustomer(Customer $customer)
+    public function setCustomer(Customer $customer): void
     {
         $this->customer = $customer;
+    }
+
+    /**
+     * @param Subscription $subscription
+     * @return void
+     */
+    public function setSubscription(Subscription $subscription): void
+    {
+        $this->subscription = $subscription;
     }
 
     /**
@@ -111,6 +98,7 @@ class SessionRequest extends Request
             'success_url'      => $this->successUrl,
             'cancel_url'       => $this->cancelUrl,
             'customer'         => $this->customer ? $this->customer->toArray() : null,
+            'subscription'     => $this->subscription ? $this->subscription->toArray() : null,
         ];
     }
 }

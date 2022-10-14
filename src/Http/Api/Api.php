@@ -6,10 +6,7 @@ use INXY\Payments\Merchant\Http\Client;
 
 class Api
 {
-    /**
-     * @var Sessions
-     */
-    public $sessions;
+    public Sessions $sessions;
 
     /**
      * @param Client $client

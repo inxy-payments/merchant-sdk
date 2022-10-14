@@ -3,18 +3,17 @@
 namespace INXY\Payments\Merchant\Http;
 
 use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
 class Client extends GuzzleClient
 {
-    const ApiPrefix = 'api/';
+    private const ApiPrefix = 'api/';
 
     /**
      * @var string
      */
-    private $apiVersion;
+    private string $apiVersion;
 
     /**
      * @param string $url
@@ -38,7 +37,6 @@ class Client extends GuzzleClient
      * @param UriInterface|string $uri
      * @param array               $options
      * @return ResponseInterface
-     * @throws GuzzleException
      */
     public function post($uri, array $options = []): ResponseInterface
     {

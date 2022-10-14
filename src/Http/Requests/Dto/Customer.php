@@ -6,18 +6,9 @@ use INXY\Payments\Merchant\Interfaces\Arrayable;
 
 class Customer implements Arrayable
 {
-    /**
-     * @var string
-     */
-    private $email;
-    /**
-     * @var string|null
-     */
-    private $firstName;
-    /**
-     * @var string|null
-     */
-    private $lastName;
+    private string  $email;
+    private ?string $firstName;
+    private ?string $lastName;
 
     /**
      * @param string      $email

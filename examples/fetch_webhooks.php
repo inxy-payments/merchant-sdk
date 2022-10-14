@@ -1,5 +1,7 @@
 <?php
 
+require_once('vendor/autoload.php');
+
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Validator;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
@@ -8,6 +10,10 @@ use INXY\Payments\Merchant\Webhooks\Factories\PaymentsReceivedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsExpiredWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsCanceledWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Enum\PaymentIntentStatus;
+use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsCreatedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsUpdatedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\SubscriptionsDeletedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsFailedWebhookFactory;
 
 function handleWebhooks($request) {
     $secretKey  = 'Your secret key here';
@@ -20,7 +26,7 @@ function handleWebhooks($request) {
         throw new BadRequestException('No valid webhook');
     }
 
-    $data = json_decode($payload, false);
+    $data = json_decode($payload, false, 512, JSON_THROW_ON_ERROR);
 
     switch ($data->name) {
         case EventName::PaymentsInit:
@@ -37,6 +43,18 @@ function handleWebhooks($request) {
             break;
         case EventName::PaymentsExpired:
             handlePaymentsExpiredWebhook($data);
+            break;
+        case EventName::PaymentsFailed:
+            handlePaymentsFailedWebhook($data);
+            break;
+        case EventName::SubscriptionsCreated:
+            handleSubscriptionsCreatedWebhook($data);
+            break;
+        case EventName::SubscriptionsUpdated:
+            handleSubscriptionsUpdatedWebhook($data);
+            break;
+        case EventName::SubscriptionsDeleted:
+            handleSubscriptionsDeletedWebhook($data);
             break;
         default:
             throw new InvalidArgumentException('Undefined webhook name');
@@ -86,6 +104,30 @@ function handlePaymentsCanceledWebhook(stdClass $webhookData) {
 
 function handlePaymentsExpiredWebhook(stdClass $webhookData) {
     $webhook = PaymentsExpiredWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handlePaymentsFailedWebhook(stdClass $webhookData) {
+    $webhook = PaymentsFailedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handleSubscriptionsCreatedWebhook(stdClass $webhookData) {
+    $webhook = SubscriptionsCreatedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handleSubscriptionsUpdatedWebhook(stdClass $webhookData) {
+    $webhook = SubscriptionsUpdatedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handleSubscriptionsDeletedWebhook(stdClass $webhookData) {
+    $webhook = SubscriptionsDeletedWebhookFactory::create($webhookData);
 
     /** Your code here */
 }

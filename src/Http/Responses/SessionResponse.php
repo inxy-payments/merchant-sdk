@@ -4,10 +4,7 @@ namespace INXY\Payments\Merchant\Http\Responses;
 
 class SessionResponse
 {
-    /**
-     * @var string
-     */
-    private $redirectUri;
+    private string $redirectUri;
 
     /**
      * @param string $redirectUri

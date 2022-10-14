@@ -8,16 +8,7 @@ use INXY\Payments\Merchant\Webhooks\Dto\Session;
 
 class PaymentExpiredData
 {
-    /**
-     * @var Session
-     */
-    public $session;
-    /**
-     * @var Payment|null
-     */
-    public $payment;
-    /**
-     * @var PaymentIntent|null
-     */
-    public $paymentIntent;
+    public Session        $session;
+    public ?Payment       $payment       = null;
+    public ?PaymentIntent $paymentIntent = null;
 }

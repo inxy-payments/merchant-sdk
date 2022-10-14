@@ -4,9 +4,10 @@ namespace INXY\Payments\Merchant\Webhooks\Enum;
 
 class ObjectName
 {
-    const Customer      = 'customer';
-    const Session       = 'session';
-    const PaymentIntent = 'payment_intent';
-    const Payment       = 'payment';
-    const Webhook       = 'webhook';
+    public const Customer      = 'customer';
+    public const Session       = 'session';
+    public const PaymentIntent = 'payment_intent';
+    public const Payment       = 'payment';
+    public const Webhook       = 'webhook';
+    public const Subscription  = 'subscription';
 }

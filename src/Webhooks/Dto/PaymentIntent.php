@@ -4,52 +4,16 @@ namespace INXY\Payments\Merchant\Webhooks\Dto;
 
 class PaymentIntent
 {
-    /**
-     * @var int
-     */
-    public $id;
-    /**
-     * @var string
-     */
-    public $object;
-    /**
-     * @var string
-     */
-    public $status;
-    /**
-     * @var string
-     */
-    public $currencyCode;
-    /**
-     * @var float
-     */
-    public $amount;
-    /**
-     * @var float
-     */
-    public $fiatAmount;
-    /**
-     * @var float
-     */
-    public $paidAmount;
-    /**
-     * @var float
-     */
-    public $paidFiatAmount;
-    /**
-     * @var float
-     */
-    public $exchangeRate;
-    /**
-     * @var int
-     */
-    public $createdDate;
-    /**
-     * @var Customer
-     */
-    public $customer;
-    /**
-     * @var array
-     */
-    public $payments;
+    public string    $id;
+    public string    $object;
+    public string    $status;
+    public string    $currencyCode;
+    public float     $amount;
+    public float     $fiatAmount;
+    public float     $paidAmount;
+    public float     $paidFiatAmount;
+    public float     $exchangeRate;
+    public int       $createdDate;
+    public ?Customer $customer = null;
+    public array     $payments = [];
 }

@@ -7,8 +7,5 @@ use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentWaitingConfirmation
 
 class PaymentWaitingConfirmationsWebhook extends Webhook
 {
-    /**
-     * @var PaymentWaitingConfirmationsData
-     */
-    public $data;
+    public PaymentWaitingConfirmationsData $data;
 }

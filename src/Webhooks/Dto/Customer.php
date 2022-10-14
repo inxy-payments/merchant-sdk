@@ -4,24 +4,9 @@ namespace INXY\Payments\Merchant\Webhooks\Dto;
 
 class Customer
 {
-    /**
-     * @var int
-     */
-    public $id;
-    /**
-     * @var string
-     */
-    public $object;
-    /**
-     * @var string
-     */
-    public $email;
-    /**
-     * @var string|null
-     */
-    public $firstName;
-    /**
-     * @var string|null
-     */
-    public $lastName;
+    public string  $id;
+    public string  $object;
+    public string  $email;
+    public ?string $firstName = null;
+    public ?string $lastName  = null;
 }

@@ -4,10 +4,7 @@ namespace INXY\Payments\Merchant\Webhooks;
 
 class Validator
 {
-    /**
-     * @var string
-     */
-    private $secretKey;
+    private string $secretKey;
 
     /**
      * @param string $secretKey
