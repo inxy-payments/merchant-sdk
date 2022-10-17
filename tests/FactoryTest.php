@@ -1,6 +1,6 @@
 <?php
 
-namespace INXY\Payments\Merchant\Tests\Webhooks\Factories;
+namespace INXY\Payments\Merchant\Tests;
 
 use PHPUnit\Framework\TestCase;
 use stdClass;
