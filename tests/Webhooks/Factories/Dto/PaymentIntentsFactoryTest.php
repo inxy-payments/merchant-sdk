@@ -2,7 +2,7 @@
 
 namespace INXY\Payments\Merchant\Tests\Webhooks\Factories\Dto;
 
-use INXY\Payments\Merchant\Tests\Webhooks\Factories\FactoryTest;
+use INXY\Payments\Merchant\Tests\FactoryTest;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentIntentsFactory;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 

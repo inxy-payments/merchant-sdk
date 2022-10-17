@@ -3,6 +3,7 @@
 namespace INXY\Payments\Merchant\Http;
 
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
@@ -37,9 +38,32 @@ class Client extends GuzzleClient
      * @param UriInterface|string $uri
      * @param array               $options
      * @return ResponseInterface
+     * @throws GuzzleException
      */
     public function post($uri, array $options = []): ResponseInterface
     {
         return parent::post(self::ApiPrefix . $this->apiVersion . $uri, $options);
+    }
+
+    /**
+     * @param UriInterface|string $uri
+     * @param array               $options
+     * @return ResponseInterface
+     * @throws GuzzleException
+     */
+    public function get($uri, array $options = []): ResponseInterface
+    {
+        return parent::get(self::ApiPrefix . $this->apiVersion . $uri, $options);
+    }
+
+    /**
+     * @param UriInterface|string $uri
+     * @param array               $options
+     * @return ResponseInterface
+     * @throws GuzzleException
+     */
+    public function delete($uri, array $options = []): ResponseInterface
+    {
+        return parent::delete(self::ApiPrefix . $this->apiVersion . $uri, $options);
     }
 }

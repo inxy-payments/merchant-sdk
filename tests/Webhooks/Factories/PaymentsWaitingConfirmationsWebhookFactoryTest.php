@@ -2,7 +2,7 @@
 
 namespace INXY\Payments\Merchant\Tests\Webhooks\Factories\Dto;
 
-use INXY\Payments\Merchant\Tests\Webhooks\Factories\FactoryTest;
+use INXY\Payments\Merchant\Tests\FactoryTest;
 use INXY\Payments\Merchant\Webhooks\Dto\Payment;
 use INXY\Payments\Merchant\Webhooks\Dto\PaymentIntent;
 use INXY\Payments\Merchant\Webhooks\Dto\Session;

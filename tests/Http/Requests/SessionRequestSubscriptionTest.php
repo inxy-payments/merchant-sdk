@@ -1,5 +1,7 @@
 <?php
 
+namespace INXY\Payments\Merchant\Tests\Http\Requests;
+
 use PHPUnit\Framework\TestCase;
 use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
 use INXY\Payments\Merchant\Http\Requests\SessionRequest;
