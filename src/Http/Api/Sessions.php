@@ -18,7 +18,7 @@ class Sessions extends ApiResource
             'json' => $request->toArray()
         ]);
 
-        $payload = json_decode($response->getBody()->getContents(), false);
+        $payload = $this->getPayload($response);
 
         return new SessionResponse($payload->data->redirect_url);
     }

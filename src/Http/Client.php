@@ -42,4 +42,24 @@ class Client extends GuzzleClient
     {
         return parent::post(self::ApiPrefix . $this->apiVersion . $uri, $options);
     }
+
+    /**
+     * @param UriInterface|string $uri
+     * @param array               $options
+     * @return ResponseInterface
+     */
+    public function get($uri, array $options = [])
+    {
+        return parent::get(self::ApiPrefix . $this->apiVersion . $uri, $options);
+    }
+
+    /**
+     * @param UriInterface|string $uri
+     * @param array               $options
+     * @return ResponseInterface
+     */
+    public function delete($uri, array $options = [])
+    {
+        return parent::delete(self::ApiPrefix . $this->apiVersion . $uri, $options);
+    }
 }
