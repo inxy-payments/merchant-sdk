@@ -18,6 +18,10 @@ class Session
      */
     public $status;
     /**
+     * @var string
+     */
+    public $paymentType;
+    /**
      * @var float
      */
     public $fiatAmount;

@@ -7,6 +7,7 @@
       "id": "ses_7vJaZ5m8O21EoY3",
       "object": "session",
       "status": "active",
+      "payment_type": "recurring",
       "customer": {
         "id": "cus_gP8N9l23JD36Lbm",
         "email": "john.doe@example.com",
