@@ -8,6 +8,7 @@ class Session
     public string    $id;
     public string    $object;
     public string    $status;
+    public string    $paymentType;
     public float     $fiatAmount;
     public string    $fiatCurrencyCode;
     public string    $orderName;
