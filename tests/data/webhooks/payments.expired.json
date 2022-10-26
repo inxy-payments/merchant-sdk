@@ -8,6 +8,7 @@
       "id": "ses_kb4ZV2wPV5YGvJ6",
       "object": "session",
       "status": "expired",
+      "payment_type": "onetime",
       "customer": {
         "id": "cus_OZxelV2Bg5EoAQ0",
         "email": "example@mail.com",

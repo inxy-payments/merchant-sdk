@@ -18,6 +18,7 @@ class SessionsFactoryTest extends FactoryTest
         $this->assertSame('ses_kb4ZV2wPV5YGvJ6', $session->id);
         $this->assertSame(ObjectName::Session, $session->object);
         $this->assertSame('active', $session->status);
+        $this->assertSame('onetime', $session->paymentType);
         $this->assertSame('test_order', $session->orderId);
         $this->assertSame('Test order', $session->orderName);
         $this->assertSame(1.5, $session->fiatAmount);

@@ -24,6 +24,7 @@ class SessionsFactory
         $sessionDto->id               = $session->id;
         $sessionDto->object           = $session->object;
         $sessionDto->status           = $session->status;
+        $sessionDto->paymentType      = $session->payment_type;
         $sessionDto->fiatAmount       = $session->fiat_amount;
         $sessionDto->fiatCurrencyCode = $session->fiat_currency_code;
         $sessionDto->orderId          = $session->order_id;
