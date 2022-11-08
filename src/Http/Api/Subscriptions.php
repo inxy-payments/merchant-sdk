@@ -35,7 +35,7 @@ class Subscriptions extends ApiResource
      */
     public function show($id)
     {
-        $route    = str_replace(self::IdMask, '', Route::SubscriptionsShow);
+        $route    = str_replace(self::IdMask, $id, Route::SubscriptionsShow);
         $response = $this->client->get($route);
         $payload  = $this->getPayload($response);
 
@@ -48,7 +48,7 @@ class Subscriptions extends ApiResource
      */
     public function delete($id)
     {
-        $route    = str_replace(self::IdMask, '', Route::SubscriptionsDelete);
+        $route    = str_replace(self::IdMask, $id, Route::SubscriptionsDelete);
         $response = $this->client->delete($route);
 
         return $response->getStatusCode() === StatusCode::NoContent;
