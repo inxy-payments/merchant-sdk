@@ -33,11 +33,12 @@ class Subscriptions extends ApiResource
     }
 
     /**
-     * @param int $id
+     * @param string $id
      * @return Subscription
-     * @throws JsonException|GuzzleException
+     * @throws GuzzleException
+     * @throws JsonException
      */
-    public function show(int $id): Subscription
+    public function show(string $id): Subscription
     {
         $route    = str_replace(self::IdMask, $id, Route::SubscriptionsShow);
         $response = $this->client->get($route);
