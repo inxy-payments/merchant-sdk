@@ -7,6 +7,9 @@ use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
 use INXY\Payments\Merchant\Http\Requests\SessionRequest;
 use INXY\Payments\Merchant\Enums\CurrencyCode;
 
+/**
+ * @deprecated
+ */
 class SessionRequestOrderTest extends TestCase
 {
     private static $sessionRequestExample = [

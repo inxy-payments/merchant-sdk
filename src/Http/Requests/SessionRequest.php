@@ -5,6 +5,9 @@ namespace INXY\Payments\Merchant\Http\Requests;
 use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
 use INXY\Payments\Merchant\Http\Requests\Dto\Subscription;
 
+/**
+ * @deprecated
+ */
 class SessionRequest extends Request
 {
     /**

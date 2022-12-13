@@ -9,6 +9,9 @@ use INXY\Payments\Merchant\Enums\CurrencyCode;
 use INXY\Payments\Merchant\Http\Requests\Dto\Subscription;
 use INXY\Payments\Merchant\Http\Requests\Enums\SubscriptionIntervalName;
 
+/**
+ * @deprecated
+ */
 class SessionRequestSubscriptionTest extends TestCase
 {
     private static $sessionRequestExample = [
