@@ -81,7 +81,7 @@ class MultiCurrencySessionRequest extends Request
     public function setCryptocurrencies(array $cryptocurrencies)
     {
         foreach ($cryptocurrencies as $cryptocurrency) {
-            if (!($cryptocurrency instanceof Cryptocurrency::class)) {
+            if (!($cryptocurrency instanceof Cryptocurrency)) {
                 throw new InvalidArgumentException('Cryptocurrency must be instance of ' . Cryptocurrency::class);
             }
 

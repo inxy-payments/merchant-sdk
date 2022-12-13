@@ -6,7 +6,6 @@ use INXY\Payments\Merchant\Enums\CurrencyCode;
 use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
 use INXY\Payments\Merchant\Http\Requests\Dto\Subscription;
 use INXY\Payments\Merchant\Http\Requests\Enums\SubscriptionIntervalName;
-use INXY\Payments\Merchant\Http\Requests\SessionRequest;
 use PHPUnit\Framework\TestCase;
 use INXY\Payments\Merchant\Enums\Blockchain;
 use INXY\Payments\Merchant\Enums\CoinType;
@@ -61,7 +60,7 @@ class MultiCurrencySessionRequestSubscriptionTest extends TestCase
         $orderAmountInUSD      = 1.0;
         $orderName             = 'Test Subscription';
         $customer              = new Customer('testexample@mail.com', 'John', 'Doe');
-        $sessionRequest        = new MultiCurrencySessionRequest($orderAmountInUSD, $orderName);
+        $sessionRequest        = new MultiCurrencySessionRequest($orderAmountInUSD, $orderName, FiatCurrencyCode::EUR);
         $subscription          = new Subscription('Test premium plan', SubscriptionIntervalName::Month, 1);
         $defaultCryptocurrency = new Cryptocurrency(CurrencyCode::USDT, Blockchain::Ethereum, CoinType::ERC20);
         $cryptocurrencies      = [];
