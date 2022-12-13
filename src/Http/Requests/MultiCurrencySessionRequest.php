@@ -58,8 +58,9 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param float  $fiatAmount
      * @param string $orderName
+     * @param string $fiatCurrency
      */
-    public function __construct($fiatAmount, $orderName, $fiatCurrency = FiatCurrencyCode::USD)
+    public function __construct(float $fiatAmount, string $orderName, string $fiatCurrency = FiatCurrencyCode::USD)
     {
         $this->fiatAmount   = $fiatAmount;
         $this->orderName    = $orderName;
@@ -69,7 +70,7 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param string $orderId
      */
-    public function setOrderId($orderId)
+    public function setOrderId(string $orderId)
     {
         $this->orderId = $orderId;
     }
@@ -91,7 +92,7 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param string $postbackUrl
      */
-    public function setPostbackUrl($postbackUrl)
+    public function setPostbackUrl(string $postbackUrl)
     {
         $this->postbackUrl = $postbackUrl;
     }
@@ -99,7 +100,7 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param string $successUrl
      */
-    public function setSuccessUrl($successUrl)
+    public function setSuccessUrl(string $successUrl)
     {
         $this->successUrl = $successUrl;
     }
@@ -107,7 +108,7 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param string $cancelUrl
      */
-    public function setCancelUrl($cancelUrl)
+    public function setCancelUrl(string $cancelUrl)
     {
         $this->cancelUrl = $cancelUrl;
     }
@@ -140,14 +141,14 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'fiat_currency'          => $this->fiatCurrency,
             'fiat_amount'            => $this->fiatAmount,
             'order_name'             => $this->orderName,
             'order_id'               => $this->orderId,
-            'cryptocurrencies'       => array_map(function ($cryptocurrency) { $cryptocurrency->toArray(); }, $this->cryptocurrencies),
+            'cryptocurrencies'       => array_map(function (Cryptocurrency $cryptocurrency) { return $cryptocurrency->toArray(); }, $this->cryptocurrencies),
             'default_cryptocurrency' => $this->defaultCryptocurrency ? $this->defaultCryptocurrency->toArray() : null,
             'postback_url'           => $this->postbackUrl,
             'success_url'            => $this->successUrl,

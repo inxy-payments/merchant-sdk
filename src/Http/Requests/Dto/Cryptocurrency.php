@@ -6,16 +6,25 @@ use INXY\Payments\Merchant\Interfaces\Arrayable;
 
 class Cryptocurrency implements Arrayable
 {
+    /**
+     * @var string
+     */
     private $code;
+    /**
+     * @var string
+     */
     private $blockchain;
+    /**
+     * @var string
+     */
     private $coinType;
 
     /**
-     * @param $code
-     * @param $blockchain
-     * @param $coinType
+     * @param string $code
+     * @param string $blockchain
+     * @param string $coinType
      */
-    public function __construct($code, $blockchain, $coinType)
+    public function __construct(string $code, string $blockchain, string $coinType)
     {
         $this->code       = $code;
         $this->blockchain = $blockchain;
@@ -25,7 +34,7 @@ class Cryptocurrency implements Arrayable
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'code'       => $this->code,
