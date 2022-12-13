@@ -2,14 +2,18 @@
 
 namespace INXY\Payments\Merchant\Http\Requests;
 
+use InvalidArgumentException;
+use INXY\Payments\Merchant\Enums\FiatCurrencyCode;
+use INXY\Payments\Merchant\Http\Requests\Dto\Cryptocurrency;
 use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
 use INXY\Payments\Merchant\Http\Requests\Dto\Subscription;
 
-/**
- * @deprecated
- */
-class SessionRequest extends Request
+class MultiCurrencySessionRequest extends Request
 {
+    /**
+     * @var string
+     */
+    private $fiatCurrency;
     /**
      * @var float
      */
@@ -26,6 +30,10 @@ class SessionRequest extends Request
      * @var array|null
      */
     private $cryptocurrencies;
+    /**
+     * @var Cryptocurrency|null
+     */
+    private $defaultCryptocurrency;
     /**
      * @var string|null
      */
@@ -51,10 +59,11 @@ class SessionRequest extends Request
      * @param float  $fiatAmount
      * @param string $orderName
      */
-    public function __construct($fiatAmount, $orderName)
+    public function __construct($fiatAmount, $orderName, $fiatCurrency = FiatCurrencyCode::USD)
     {
-        $this->fiatAmount = $fiatAmount;
-        $this->orderName  = $orderName;
+        $this->fiatAmount   = $fiatAmount;
+        $this->orderName    = $orderName;
+        $this->fiatCurrency = $fiatCurrency;
     }
 
     /**
@@ -70,7 +79,13 @@ class SessionRequest extends Request
      */
     public function setCryptocurrencies(array $cryptocurrencies)
     {
-        $this->cryptocurrencies = $cryptocurrencies;
+        foreach ($cryptocurrencies as $cryptocurrency) {
+            if (!($cryptocurrency instanceof Cryptocurrency::class)) {
+                throw new InvalidArgumentException('Cryptocurrency must be instance of ' . Cryptocurrency::class);
+            }
+
+            $this->cryptocurrencies[] = $cryptocurrency;
+        }
     }
 
     /**
@@ -115,20 +130,30 @@ class SessionRequest extends Request
     }
 
     /**
+     * @param Cryptocurrency|null $defaultCryptocurrency
+     */
+    public function setDefaultCryptocurrency(Cryptocurrency $defaultCryptocurrency)
+    {
+        $this->defaultCryptocurrency = $defaultCryptocurrency;
+    }
+
+    /**
      * @return array
      */
     public function toArray()
     {
         return [
-            'fiat_amount'      => $this->fiatAmount,
-            'order_name'       => $this->orderName,
-            'order_id'         => $this->orderId,
-            'cryptocurrencies' => $this->cryptocurrencies,
-            'postback_url'     => $this->postbackUrl,
-            'success_url'      => $this->successUrl,
-            'cancel_url'       => $this->cancelUrl,
-            'customer'         => $this->customer ? $this->customer->toArray() : null,
-            'subscription'     => $this->subscription ? $this->subscription->toArray() : null,
+            'fiat_currency'          => $this->fiatCurrency,
+            'fiat_amount'            => $this->fiatAmount,
+            'order_name'             => $this->orderName,
+            'order_id'               => $this->orderId,
+            'cryptocurrencies'       => array_map(function ($cryptocurrency) { $cryptocurrency->toArray(); }, $this->cryptocurrencies),
+            'default_cryptocurrency' => $this->defaultCryptocurrency ? $this->defaultCryptocurrency->toArray() : null,
+            'postback_url'           => $this->postbackUrl,
+            'success_url'            => $this->successUrl,
+            'cancel_url'             => $this->cancelUrl,
+            'customer'               => $this->customer ? $this->customer->toArray() : null,
+            'subscription'           => $this->subscription ? $this->subscription->toArray() : null,
         ];
     }
 }

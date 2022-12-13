@@ -11,4 +11,6 @@ class CurrencyCode
     const USDT = 'USDT';
     const USDC = 'USDC';
     const DAI  = 'DAI';
+    const BNB  = 'BNB';
+    const BUSD = 'BUSD';
 }
