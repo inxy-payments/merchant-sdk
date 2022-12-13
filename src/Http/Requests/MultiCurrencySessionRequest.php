@@ -147,7 +147,7 @@ class MultiCurrencySessionRequest extends Request
             'fiat_amount'            => $this->fiatAmount,
             'order_name'             => $this->orderName,
             'order_id'               => $this->orderId,
-            'cryptocurrencies'       => array_map(function ($cryptocurrency) { $cryptocurrency->toArray(); }, $this->cryptocurrencies),
+            'cryptocurrencies'       => array_map(function (Cryptocurrency $cryptocurrency) { return $cryptocurrency->toArray(); }, $this->cryptocurrencies),
             'default_cryptocurrency' => $this->defaultCryptocurrency ? $this->defaultCryptocurrency->toArray() : null,
             'postback_url'           => $this->postbackUrl,
             'success_url'            => $this->successUrl,
