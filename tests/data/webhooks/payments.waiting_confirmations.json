@@ -11,6 +11,13 @@
       "fiat_amount": 1,
       "created_date": 1662472330,
       "currency_code": "USDT",
+      "currency": {
+        "id": "currency_OZxelV2Bg5EoAQ0",
+        "object": "currency",
+        "code": "USDT",
+        "blockchain": "ethereum",
+        "coin_type": "erc20"
+      },
       "fiat_currency_code": "USD"
     },
     "session": {
@@ -52,6 +59,13 @@
           "fiat_amount": 1,
           "created_date": 1662472330,
           "currency_code": "USDT",
+          "currency": {
+            "id": "currency_OZxelV2Bg5EoAQ0",
+            "object": "currency",
+            "code": "USDT",
+            "blockchain": "ethereum",
+            "coin_type": "erc20"
+          },
           "fiat_currency_code": "USD"
         }
       ],
@@ -59,6 +73,13 @@
       "paid_amount": 0,
       "created_date": 1662472126,
       "currency_code": "USDT",
+      "currency": {
+        "id": "currency_OZxelV2Bg5EoAQ0",
+        "object": "currency",
+        "code": "USDT",
+        "blockchain": "ethereum",
+        "coin_type": "erc20"
+      },
       "exchange_rate": 0.9999,
       "paid_fiat_amount": 0
     }

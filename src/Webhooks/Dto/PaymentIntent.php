@@ -8,6 +8,7 @@ class PaymentIntent
     public string    $object;
     public string    $status;
     public string    $currencyCode;
+    public Currency  $currency;
     public float     $amount;
     public float     $fiatAmount;
     public float     $paidAmount;
