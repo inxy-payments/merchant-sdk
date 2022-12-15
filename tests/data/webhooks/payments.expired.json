@@ -39,6 +39,13 @@
       "paid_amount": 0,
       "created_date": 1662470446,
       "currency_code": "USDT",
+      "currency": {
+        "id": "currency_OZxelV2Bg5EoAQ0",
+        "object": "currency",
+        "code": "USDT",
+        "blockchain": "ethereum",
+        "coin_type": "erc20"
+      },
       "exchange_rate": 0.9999,
       "paid_fiat_amount": 0
     }

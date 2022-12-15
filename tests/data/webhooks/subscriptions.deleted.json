@@ -31,6 +31,13 @@
       "created_date": 1665655813,
       "deleted_date": 1665658840,
       "currency_code": "USDC",
+      "currency": {
+        "id": "currency_OZxelV2Bg5EoAQ0",
+        "object": "currency",
+        "code": "USDC",
+        "blockchain": "ethereum",
+        "coin_type": "erc20"
+      },
       "interval_count": 1,
       "next_payment_date": 1670889600,
       "fiat_currency_code": "USD"
