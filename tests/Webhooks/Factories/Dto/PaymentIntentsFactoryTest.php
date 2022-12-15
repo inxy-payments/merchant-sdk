@@ -25,6 +25,9 @@ class PaymentIntentsFactoryTest extends FactoryTest
         $this->assertSame(0.0, $paymentIntent->paidFiatAmount);
         $this->assertSame([], $paymentIntent->payments);
         $this->assertSame('USDC', $paymentIntent->currencyCode);
+        $this->assertSame('USDC', $paymentIntent->currency->code);
+        $this->assertSame('ethereum', $paymentIntent->currency->blockchain);
+        $this->assertSame('erc20', $paymentIntent->currency->coinType);
         $this->assertSame(1665645215, $paymentIntent->createdDate);
         $this->assertSame('john.doe@example.com', $paymentIntent->customer->email);
         $this->assertSame('John', $paymentIntent->customer->firstName);

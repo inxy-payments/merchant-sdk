@@ -22,6 +22,9 @@ class PaymentsFactoryTest extends FactoryTest
         $this->assertSame('USD', $payment->fiatCurrencyCode);
         $this->assertSame(1.5, $payment->amount);
         $this->assertSame('USDC', $payment->currencyCode);
+        $this->assertSame('USDC', $payment->currency->code);
+        $this->assertSame('ethereum', $payment->currency->blockchain);
+        $this->assertSame('erc20', $payment->currency->coinType);
         $this->assertSame(1665645393, $payment->createdDate);
     }
 

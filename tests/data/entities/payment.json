@@ -6,5 +6,12 @@
   "fiat_amount": 1.5,
   "created_date": 1665645393,
   "currency_code": "USDC",
+  "currency": {
+    "id": "currency_OZxelV2Bg5EoAQ0",
+    "object": "currency",
+    "code": "USDC",
+    "blockchain": "ethereum",
+    "coin_type": "erc20"
+  },
   "fiat_currency_code": "USD"
 }

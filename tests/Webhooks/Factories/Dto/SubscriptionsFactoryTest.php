@@ -24,6 +24,9 @@ class SubscriptionsFactoryTest extends FactoryTest
         $this->assertSame(1.5, $subscription->fiatAmount);
         $this->assertSame('USD', $subscription->fiatCurrencyCode);
         $this->assertSame('USDC', $subscription->currencyCode);
+        $this->assertSame('USDC', $subscription->currency->code);
+        $this->assertSame('ethereum', $subscription->currency->blockchain);
+        $this->assertSame('erc20', $subscription->currency->coinType);
         $this->assertSame(1668297600, $subscription->nextPaymentDate);
         $this->assertSame(1665645392, $subscription->createdDate);
         $this->assertNull($subscription->deletedDate);
