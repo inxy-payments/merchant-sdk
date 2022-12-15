@@ -25,6 +25,10 @@ class Subscription
      */
     public $currencyCode;
     /**
+     * @var Currency
+     */
+    public $currency;
+    /**
      * @var float
      */
     public $fiatAmount;

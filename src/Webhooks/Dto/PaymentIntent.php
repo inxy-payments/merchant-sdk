@@ -21,6 +21,10 @@ class PaymentIntent
      */
     public $currencyCode;
     /**
+     * @var Currency
+     */
+    public $currency;
+    /**
      * @var float
      */
     public $amount;

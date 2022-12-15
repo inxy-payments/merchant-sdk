@@ -21,6 +21,10 @@ class Payment
      */
     public $currencyCode;
     /**
+     * @var Currency
+     */
+    public $currency;
+    /**
      * @var float
      */
     public $amount;

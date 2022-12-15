@@ -31,6 +31,13 @@
       "created_date": 1665645392,
       "deleted_date": null,
       "currency_code": "USDC",
+      "currency": {
+        "id": "currency_OZxelV2Bg5EoAQ0",
+        "object": "currency",
+        "code": "USDC",
+        "blockchain": "ethereum",
+        "coin_type": "erc20"
+      },
       "interval_count": 1,
       "next_payment_date": 1673568000,
       "fiat_currency_code": "USD"
@@ -52,6 +59,13 @@
       "paid_amount": 0,
       "created_date": 1665646175,
       "currency_code": "USDC",
+      "currency": {
+        "id": "currency_OZxelV2Bg5EoAQ0",
+        "object": "currency",
+        "code": "USDC",
+        "blockchain": "ethereum",
+        "coin_type": "erc20"
+      },
       "exchange_rate": 1,
       "paid_fiat_amount": 0
     }

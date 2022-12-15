@@ -37,6 +37,10 @@ class PaymentIntentsFactory
 
         $paymentIntentDto->customer = $customer;
 
+        $currency = CurrenciesFactory::create($paymentIntent->currency);
+
+        $paymentIntentDto->currency = $currency;
+
         foreach ($paymentIntent->payments as $payment) {
             $paymentIntentDto->payments[] = PaymentsFactory::create($payment);
         }

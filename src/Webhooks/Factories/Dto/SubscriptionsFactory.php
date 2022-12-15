@@ -34,6 +34,10 @@ class SubscriptionsFactory
         $subscriptionDto->createdDate      = $subscription->created_date;
         $subscriptionDto->deletedDate      = $subscription->deleted_date;
 
+        $currency = CurrenciesFactory::create($subscription->currency);
+
+        $subscriptionDto->currency = $currency;
+
         return $subscriptionDto;
     }
 }
