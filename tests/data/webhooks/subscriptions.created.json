@@ -32,7 +32,7 @@
       "deleted_date": null,
       "currency_code": "USDC",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDC",
         "blockchain": "ethereum",
@@ -60,7 +60,7 @@
       "created_date": 1665645103,
       "currency_code": "USDC",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDC",
         "blockchain": "ethereum",

@@ -7,7 +7,7 @@
       "status": "active",
       "currency_code": "USDT",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDT",
         "blockchain": "ethereum",
@@ -28,7 +28,7 @@
       "status": "active",
       "currency_code": "USDT",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDT",
         "blockchain": "ethereum",
@@ -49,7 +49,7 @@
       "status": "active",
       "currency_code": "ETH",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "ETH",
         "blockchain": "ethereum",
@@ -70,7 +70,7 @@
       "status": "active",
       "currency_code": "USDT",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDT",
         "blockchain": "ethereum",
@@ -91,7 +91,7 @@
       "status": "active",
       "currency_code": "USDT",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDT",
         "blockchain": "ethereum",
@@ -112,7 +112,7 @@
       "status": "active",
       "currency_code": "USDC",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDC",
         "blockchain": "ethereum",
@@ -133,7 +133,7 @@
       "status": "active",
       "currency_code": "USDT",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDT",
         "blockchain": "ethereum",
@@ -154,7 +154,7 @@
       "status": "active",
       "currency_code": "USDC",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDC",
         "blockchain": "ethereum",
