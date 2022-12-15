@@ -15,7 +15,7 @@ class CurrenciesFactoryTest extends FactoryTest
     {
         $customer = CurrenciesFactory::create($this->payload);
 
-        $this->assertSame('currency_OZxelV2Bg5EoAQ0', $customer->id);
+        $this->assertSame('cur_OZxelV2Bg5EoAQ0', $customer->id);
         $this->assertSame(ObjectName::Currency, $customer->object);
         $this->assertSame('USDT', $customer->code);
         $this->assertSame('ethereum', $customer->blockchain);
