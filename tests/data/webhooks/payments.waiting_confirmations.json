@@ -12,7 +12,7 @@
       "created_date": 1662472330,
       "currency_code": "USDT",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDT",
         "blockchain": "ethereum",
@@ -60,7 +60,7 @@
           "created_date": 1662472330,
           "currency_code": "USDT",
           "currency": {
-            "id": "currency_OZxelV2Bg5EoAQ0",
+            "id": "cur_OZxelV2Bg5EoAQ0",
             "object": "currency",
             "code": "USDT",
             "blockchain": "ethereum",
@@ -74,7 +74,7 @@
       "created_date": 1662472126,
       "currency_code": "USDT",
       "currency": {
-        "id": "currency_OZxelV2Bg5EoAQ0",
+        "id": "cur_OZxelV2Bg5EoAQ0",
         "object": "currency",
         "code": "USDT",
         "blockchain": "ethereum",
