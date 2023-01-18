@@ -13,21 +13,31 @@ $apiKey      = 'Your api key here';
 $config      = new Config(Environment::Sandbox, $apiKey, ApiVersion::v1);
 $merchantSDK = new MerchantSDK($config);
 
-$orderAmountInUSD = 20;
-$orderName        = 'Order #1';
-$customer         = new Customer('example@mail.com', 'John', 'Doe');
-$sessionRequest   = new SessionRequest($orderAmountInUSD, $orderName);
+$orderAmountInUSD      = 20;
+$orderName             = 'Order #1';
+$customer              = new Customer('example@mail.com', 'John', 'Doe');
+$sessionRequest        = new MultiCurrencySessionRequest($orderAmountInUSD, $orderName, FiatCurrencyCode::USD);
+$defaultCryptocurrency = new Cryptocurrency(CurrencyCode::USDT, Blockchain::Ethereum, CoinType::ERC20);
+$cryptocurrencies      = [];
 
+$cryptocurrencies[] = $defaultCryptocurrency;
+$cryptocurrencies[] = new Cryptocurrency(CurrencyCode::USDT, Blockchain::BinanceSmartChain, CoinType::BEP20);
+$cryptocurrencies[] = new Cryptocurrency(CurrencyCode::BTC, Blockchain::Bitcoin, CoinType::Native);
+$cryptocurrencies[] = new Cryptocurrency(CurrencyCode::ETH, Blockchain::Ethereum, CoinType::Native);
+$cryptocurrencies[] = new Cryptocurrency(CurrencyCode::DOGE, Blockchain::Dogecoin, CoinType::Native);
+$cryptocurrencies[] = new Cryptocurrency(CurrencyCode::USDC, Blockchain::Ethereum, CoinType::ERC20);
+
+$sessionRequest->setCryptocurrencies($cryptocurrencies);
+$sessionRequest->setDefaultCryptocurrency($defaultCryptocurrency);
 $sessionRequest->setOrderId('order_123');
-$sessionRequest->setCryptocurrencies([CurrencyCode::USDT, CurrencyCode::BTC]);
 $sessionRequest->setPostbackUrl('https://example.com/postback');
 $sessionRequest->setCancelUrl('https://example.com/cancel');
 $sessionRequest->setSuccessUrl('https://example.com/success');
 $sessionRequest->setCustomer($customer);
 
-$sessionResponse = $merchantSDK->createSession($sessionRequest);
+$sessionResponse = $merchantSDK->createMultiCurrencySession($sessionRequest);
 
-header( 'Location: ' . $sessionResponse->getRedirectUri());
+header('Location: ' . $sessionResponse->getRedirectUri());
 ```
 
 ## Example handle webhook
