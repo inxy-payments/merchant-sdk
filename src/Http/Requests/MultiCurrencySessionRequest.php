@@ -62,9 +62,10 @@ class MultiCurrencySessionRequest extends Request
      */
     public function __construct(float $fiatAmount, string $orderName, string $fiatCurrency = FiatCurrencyCode::USD)
     {
-        $this->fiatAmount   = $fiatAmount;
-        $this->orderName    = $orderName;
-        $this->fiatCurrency = $fiatCurrency;
+        $this->fiatAmount       = $fiatAmount;
+        $this->orderName        = $orderName;
+        $this->fiatCurrency     = $fiatCurrency;
+        $this->cryptocurrencies = [];
     }
 
     /**
