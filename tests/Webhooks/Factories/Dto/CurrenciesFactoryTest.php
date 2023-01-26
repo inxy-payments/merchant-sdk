@@ -13,13 +13,13 @@ class CurrenciesFactoryTest extends FactoryTest
      */
     public function testCurrencyCreate()
     {
-        $customer = CurrenciesFactory::create($this->payload);
+        $currency = CurrenciesFactory::create($this->payload);
 
-        $this->assertSame('cur_OZxelV2Bg5EoAQ0', $customer->id);
-        $this->assertSame(ObjectName::Currency, $customer->object);
-        $this->assertSame('USDT', $customer->code);
-        $this->assertSame('ethereum', $customer->blockchain);
-        $this->assertSame('erc20', $customer->coinType);
+        $this->assertSame('cur_OZxelV2Bg5EoAQ0', $currency->id);
+        $this->assertSame(ObjectName::Currency, $currency->object);
+        $this->assertSame('USDT', $currency->code);
+        $this->assertSame('ethereum', $currency->blockchain);
+        $this->assertSame('erc20', $currency->coinType);
     }
 
     /**
