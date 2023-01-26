@@ -11,7 +11,7 @@ class CurrenciesFactoryTest extends FactoryTest
     /**
      * @return void
      */
-    public function testCurrencyCreate()
+    public function testCurrencyCreate(): void
     {
         $currency = CurrenciesFactory::create($this->payload);
 

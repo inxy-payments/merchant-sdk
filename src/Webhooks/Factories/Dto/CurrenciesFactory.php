@@ -13,7 +13,7 @@ class CurrenciesFactory
      * @param stdClass $currency
      * @return Currency
      */
-    public static function create(stdClass $currency)
+    public static function create(stdClass $currency): Currency
     {
         if (!property_exists($currency, 'object') || $currency->object !== ObjectName::Currency) {
             throw new InvalidArgumentException('Currency param must be object with name currency');

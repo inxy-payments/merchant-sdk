@@ -32,7 +32,6 @@ class MultiCurrencySessionRequest extends Request
         $this->fiatAmount       = $fiatAmount;
         $this->orderName        = $orderName;
         $this->fiatCurrency     = $fiatCurrency;
-        $this->cryptocurrencies = [];
     }
 
     /**
