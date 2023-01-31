@@ -9,4 +9,6 @@ class Blockchain
     const Dogecoin          = 'dogecoin';
     const Ethereum          = 'ethereum';
     const BinanceSmartChain = 'binance-smart-chain';
+    const Polygon           = 'polygon';
+    const Tron              = 'tron';
 }
