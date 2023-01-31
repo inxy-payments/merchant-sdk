@@ -7,4 +7,5 @@ class CoinType
     public const Native = 'native';
     public const ERC20  = 'erc20';
     public const BEP20  = 'bep20';
+    public const TRC20  = 'trc20';
 }
