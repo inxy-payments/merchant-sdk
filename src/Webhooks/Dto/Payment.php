@@ -40,4 +40,8 @@ class Payment
      * @var int
      */
     public $createdDate;
+    /**
+     * @var int|null
+     */
+    public $confirmedDate;
 }

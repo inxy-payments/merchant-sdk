@@ -29,6 +29,7 @@ class PaymentsFactory
         $paymentDto->fiatAmount       = $payment->fiat_amount;
         $paymentDto->fiatCurrencyCode = $payment->fiat_currency_code;
         $paymentDto->createdDate      = $payment->created_date;
+        $paymentDto->confirmedDate    = $payment->confirmed_date;
 
         $currency = CurrenciesFactory::create($payment->currency);
 
