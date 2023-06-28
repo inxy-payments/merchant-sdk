@@ -13,4 +13,5 @@ class Payment
     public float    $fiatAmount;
     public string   $fiatCurrencyCode;
     public int      $createdDate;
+    public ?int     $confirmedDate = null;
 }

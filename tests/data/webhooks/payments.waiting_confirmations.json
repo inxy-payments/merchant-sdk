@@ -10,6 +10,7 @@
       "status": "pending",
       "fiat_amount": 1,
       "created_date": 1662472330,
+      "confirmed_date": null,
       "currency_code": "USDT",
       "currency": {
         "id": "cur_OZxelV2Bg5EoAQ0",
@@ -58,6 +59,7 @@
           "status": "pending",
           "fiat_amount": 1,
           "created_date": 1662472330,
+          "confirmed_date": null,
           "currency_code": "USDT",
           "currency": {
             "id": "cur_OZxelV2Bg5EoAQ0",
