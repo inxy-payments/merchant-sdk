@@ -46,7 +46,20 @@
         "coin_type": "erc20"
       },
       "exchange_rate": 1,
-      "paid_fiat_amount": 0
+      "paid_fiat_amount": 0,
+      "fees": {
+        "object": "fee",
+        "amount": 0,
+        "fiat_amount": 0,
+        "currency": {
+          "id": "cur_OZxelV2Bg5EoAQ0",
+          "object": "currency",
+          "code": "USDT",
+          "blockchain": "ethereum",
+          "coin_type": "erc20"
+        },
+        "fiat_currency_code": "USD"
+      }
     }
   }
 }
