@@ -56,4 +56,8 @@ class PaymentIntent
      * @var array
      */
     public $payments;
+    /**
+     * @var Fee
+     */
+    public $fees;
 }

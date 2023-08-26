@@ -32,14 +32,9 @@ class PaymentIntentsFactory
         $paymentIntentDto->exchangeRate   = $paymentIntent->exchange_rate;
         $paymentIntentDto->createdDate    = $paymentIntent->created_date;
         $paymentIntentDto->payments       = [];
-
-        $customer = CustomersFactory::create($paymentIntent->customer);
-
-        $paymentIntentDto->customer = $customer;
-
-        $currency = CurrenciesFactory::create($paymentIntent->currency);
-
-        $paymentIntentDto->currency = $currency;
+        $paymentIntentDto->customer       = CustomersFactory::create($paymentIntent->customer);
+        $paymentIntentDto->currency       = CurrenciesFactory::create($paymentIntent->currency);
+        $paymentIntentDto->fees           = FeesFactory::create($paymentIntent->fees);
 
         foreach ($paymentIntent->payments as $payment) {
             $paymentIntentDto->payments[] = PaymentsFactory::create($payment);
