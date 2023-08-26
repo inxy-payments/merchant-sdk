@@ -15,6 +15,7 @@ class PaymentIntent
     public float     $paidFiatAmount;
     public float     $exchangeRate;
     public int       $createdDate;
+    public Fee       $fees;
     public ?Customer $customer = null;
     public array     $payments = [];
 }
