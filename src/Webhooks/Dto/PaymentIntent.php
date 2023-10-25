@@ -57,6 +57,10 @@ class PaymentIntent
      */
     public $payments;
     /**
+     * @var string|null
+     */
+    public $issuedWallet;
+    /**
      * @var Fee
      */
     public $fees;
