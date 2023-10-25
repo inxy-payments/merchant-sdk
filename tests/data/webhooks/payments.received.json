@@ -105,6 +105,7 @@
       },
       "exchange_rate": 1,
       "paid_fiat_amount": 1.5,
+      "issued_wallet": null,
       "fees": {
         "object": "fee",
         "amount": 0.01,

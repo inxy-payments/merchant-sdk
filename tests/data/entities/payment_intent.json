@@ -23,6 +23,7 @@
     "coin_type": "erc20"
   },
   "exchange_rate": 1,
+  "issued_wallet": "0x180F24036784e971a3460606E58d2056fa75f25F",
   "paid_fiat_amount": 0,
   "fees": {
     "object": "fee",
