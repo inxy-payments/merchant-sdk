@@ -2,7 +2,7 @@ name: Run PHPUnit Tests
 
 on:
   pull_request:
-    branches: [ "master", "v1.x", "v2.x" ]
+    branches: [ "master" ]
 
 jobs:
   run_tests:
