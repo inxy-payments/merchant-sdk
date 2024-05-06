@@ -34,30 +34,9 @@
         "first_name": "John"
       },
       "order_id": "1234",
-      "order_name": "Premium subscription",
+      "order_name": "Premium",
       "fiat_amount": 1.5,
       "created_date": 1665645049,
-      "fiat_currency_code": "USD"
-    },
-    "subscription": {
-      "id": "sub_yJGnv5794DNqlex",
-      "name": "Premium",
-      "object": "subscription",
-      "status": "active",
-      "interval": "month",
-      "fiat_amount": 1.5,
-      "created_date": 1665645392,
-      "deleted_date": null,
-      "currency_code": "USDC",
-      "currency": {
-        "id": "cur_OZxelV2Bg5EoAQ0",
-        "object": "currency",
-        "code": "USDC",
-        "blockchain": "ethereum",
-        "coin_type": "erc20"
-      },
-      "interval_count": 1,
-      "next_payment_date": 1668297600,
       "fiat_currency_code": "USD"
     },
     "payment_intent": {
