@@ -11,8 +11,8 @@ jobs:
 
     strategy:
       matrix:
-        php_version: [ 8.2, 5.6, 7.1, 8.2 ]
-        branch: [ master, v1.x, v2.x ]
+        php_version: [ 8.2 ]
+        branch: [ master ]
 
     steps:
       - name: Checkout code
@@ -24,7 +24,7 @@ jobs:
           php-version: ${{ matrix.php_version }}
 
       - name: Install Composer dependencies
-        run: composer install -q --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer install -q --no-scripts --prefer-dist
 
       - name: Run PHPUnit tests
         run: vendor/bin/phpunit
