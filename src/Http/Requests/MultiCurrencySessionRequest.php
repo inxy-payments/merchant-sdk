@@ -6,7 +6,6 @@ use InvalidArgumentException;
 use INXY\Payments\Merchant\Enums\FiatCurrencyCode;
 use INXY\Payments\Merchant\Http\Requests\Dto\Cryptocurrency;
 use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
-use INXY\Payments\Merchant\Http\Requests\Dto\Subscription;
 
 class MultiCurrencySessionRequest extends Request
 {
@@ -20,7 +19,6 @@ class MultiCurrencySessionRequest extends Request
     private ?string         $successUrl            = null;
     private ?string         $cancelUrl             = null;
     private ?Customer       $customer              = null;
-    private ?Subscription   $subscription          = null;
 
     /**
      * @param float  $fiatAmount
@@ -89,16 +87,7 @@ class MultiCurrencySessionRequest extends Request
     }
 
     /**
-     * @param Subscription $subscription
-     * @return void
-     */
-    public function setSubscription(Subscription $subscription): void
-    {
-        $this->subscription = $subscription;
-    }
-
-    /**
-     * @param Cryptocurrency $defaultCryptocurrency
+     * @param Cryptocurrency|null $defaultCryptocurrency
      */
     public function setDefaultCryptocurrency(Cryptocurrency $defaultCryptocurrency): void
     {
@@ -121,7 +110,6 @@ class MultiCurrencySessionRequest extends Request
             'success_url'            => $this->successUrl,
             'cancel_url'             => $this->cancelUrl,
             'customer'               => $this->customer ? $this->customer->toArray() : null,
-            'subscription'           => $this->subscription ? $this->subscription->toArray() : null,
         ];
     }
 }

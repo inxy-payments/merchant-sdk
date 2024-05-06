@@ -5,7 +5,6 @@ namespace INXY\Payments\Merchant\Tests\Webhooks\Factories\Dto;
 use INXY\Payments\Merchant\Tests\FactoryTest;
 use INXY\Payments\Merchant\Webhooks\Dto\PaymentIntent;
 use INXY\Payments\Merchant\Webhooks\Dto\Session;
-use INXY\Payments\Merchant\Webhooks\Dto\Subscription;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentFailedData;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
@@ -26,7 +25,6 @@ class PaymentsFailedWebhookFactoryTest extends FactoryTest
         $this->assertInstanceOf(PaymentFailedData::class, $webhook->data);
         $this->assertInstanceOf(Session::class, $webhook->data->session);
         $this->assertInstanceOf(PaymentIntent::class, $webhook->data->paymentIntent);
-        $this->assertInstanceOf(Subscription::class, $webhook->data->subscription);
     }
 
     /**

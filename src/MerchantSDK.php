@@ -9,8 +9,6 @@ use INXY\Payments\Merchant\Http\Requests\MultiCurrencySessionRequest;
 use INXY\Payments\Merchant\Http\Requests\SessionRequest;
 use INXY\Payments\Merchant\Http\Responses\SessionResponse;
 use JsonException;
-use INXY\Payments\Merchant\Http\Responses\SubscriptionsListResponse;
-use INXY\Payments\Merchant\Webhooks\Dto\Subscription;
 
 class MerchantSDK
 {
@@ -38,40 +36,10 @@ class MerchantSDK
     /**
      * @param MultiCurrencySessionRequest $request
      * @return SessionResponse
-     *  @throws JsonException|GuzzleException
+     * @throws JsonException|GuzzleException
      */
     public function createMultiCurrencySession(MultiCurrencySessionRequest $request): SessionResponse
     {
         return $this->api->sessions->createMultiCurrency($request);
-    }
-
-    /**
-     * @param int|null $page
-     * @return SubscriptionsListResponse
-     * @throws JsonException|GuzzleException
-     */
-    public function subscriptionsList(?int $page = null): SubscriptionsListResponse
-    {
-        return $this->api->subscriptions->getList($page);
-    }
-
-    /**
-     * @param string $id
-     * @return Subscription
-     * @throws JsonException|GuzzleException
-     */
-    public function showSubscription(string $id): Subscription
-    {
-        return $this->api->subscriptions->show($id);
-    }
-
-    /**
-     * @param string $id
-     * @return bool
-     * @throws GuzzleException
-     */
-    public function deleteSubscription(string $id): bool
-    {
-        return $this->api->subscriptions->delete($id);
     }
 }

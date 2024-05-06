@@ -27,8 +27,7 @@ class SessionRequestOrderTest extends TestCase
             'email'      => 'testexample@mail.com',
             'first_name' => 'John',
             'last_name'  => 'Doe'
-        ],
-        'subscription'     => null
+        ]
     ];
 
     /**

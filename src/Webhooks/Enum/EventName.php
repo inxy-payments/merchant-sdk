@@ -10,7 +10,4 @@ class EventName
     public const PaymentsWaitingConfirmations = 'payments.waiting_confirmations';
     public const PaymentsReceived             = 'payments.received';
     public const PaymentsFailed               = 'payments.failed';
-    public const SubscriptionsCreated         = 'subscriptions.created';
-    public const SubscriptionsUpdated         = 'subscriptions.updated';
-    public const SubscriptionsDeleted         = 'subscriptions.deleted';
 }

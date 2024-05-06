@@ -6,7 +6,6 @@ use INXY\Payments\Merchant\Tests\FactoryTest;
 use INXY\Payments\Merchant\Webhooks\Dto\Payment;
 use INXY\Payments\Merchant\Webhooks\Dto\PaymentIntent;
 use INXY\Payments\Merchant\Webhooks\Dto\Session;
-use INXY\Payments\Merchant\Webhooks\Dto\Subscription;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentReceivedData;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
@@ -28,7 +27,6 @@ class PaymentsReceivedWebhookFactoryTest extends FactoryTest
         $this->assertInstanceOf(Session::class, $webhook->data->session);
         $this->assertInstanceOf(PaymentIntent::class, $webhook->data->paymentIntent);
         $this->assertInstanceOf(Payment::class, $webhook->data->payment);
-        $this->assertInstanceOf(Subscription::class, $webhook->data->subscription);
     }
 
     /**

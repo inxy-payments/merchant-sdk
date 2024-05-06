@@ -9,7 +9,4 @@ class Route
      */
     public const SessionsCreate              = '/sessions';
     public const MultiCurrencySessionsCreate = '/sessions/multi-currency';
-    public const SubscriptionsList           = '/subscriptions';
-    public const SubscriptionsShow           = '/subscriptions/{id}';
-    public const SubscriptionsDelete         = '/subscriptions/{id}';
 }

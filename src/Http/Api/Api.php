@@ -6,15 +6,13 @@ use INXY\Payments\Merchant\Http\Client;
 
 class Api
 {
-    public Sessions      $sessions;
-    public Subscriptions $subscriptions;
+    public Sessions $sessions;
 
     /**
      * @param Client $client
      */
     public function __construct(Client $client)
     {
-        $this->sessions      = new Sessions($client);
-        $this->subscriptions = new Subscriptions($client);
+        $this->sessions = new Sessions($client);
     }
 }
