@@ -10,7 +10,6 @@ use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentIntentsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\SessionsFactory;
-use INXY\Payments\Merchant\Webhooks\Factories\Dto\SubscriptionsFactory;
 use stdClass;
 
 class PaymentsReceivedWebhookFactory
@@ -34,7 +33,6 @@ class PaymentsReceivedWebhookFactory
         $webhookData->session       = SessionsFactory::create($webhook->data->session);
         $webhookData->paymentIntent = PaymentIntentsFactory::create($webhook->data->payment_intent);
         $webhookData->payment       = PaymentsFactory::create($webhook->data->payment);
-        $webhookData->subscription  = $webhook->data->subscription !== null ? SubscriptionsFactory::create($webhook->data->subscription) : null;
 
         $webhookDto = new PaymentReceivedWebhook($webhook->id, $webhook->object, $webhook->name);
 

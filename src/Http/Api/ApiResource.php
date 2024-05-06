@@ -7,8 +7,6 @@ use stdClass;
 
 class ApiResource
 {
-    const IdMask = '{id}';
-
     /**
      * @var Client
      */
