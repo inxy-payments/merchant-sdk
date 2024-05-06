@@ -1,0 +1,30 @@
+name: Run PHPUnit Tests
+
+on:
+  pull_request:
+    branches: [ "master", "v1.x", "v2.x" ]
+
+jobs:
+  run_tests:
+    name: Run PHPUnit Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php_version: [ 8.2, 5.6, 7.1, 8.2 ]
+        branch: [ master, v1.x, v2.x ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php_version }}
+
+      - name: Install Composer dependencies
+        run: composer install -q --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Run PHPUnit tests
+        run: vendor/bin/phpunit
