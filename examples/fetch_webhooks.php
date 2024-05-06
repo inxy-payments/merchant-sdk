@@ -2,6 +2,7 @@
 
 require_once('vendor/autoload.php');
 
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsFailedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Validator;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
