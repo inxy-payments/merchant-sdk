@@ -3,10 +3,8 @@
 namespace INXY\Payments\Merchant\Webhooks\Factories;
 
 use InvalidArgumentException;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentRejectedData;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentIllegalData;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentIllegalWebhook;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentRejectedWebhook;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentIntentsFactory;
