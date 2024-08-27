@@ -6,7 +6,7 @@ use INXY\Payments\Merchant\Tests\FactoryTest;
 use INXY\Payments\Merchant\Webhooks\Dto\Payment;
 use INXY\Payments\Merchant\Webhooks\Dto\PaymentIntent;
 use INXY\Payments\Merchant\Webhooks\Dto\Session;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentIllegalData;
+use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentIllegalData;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentIllegalWebhook;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
