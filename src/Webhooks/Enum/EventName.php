@@ -10,4 +10,6 @@ class EventName
     const PaymentsWaitingConfirmations = 'payments.waiting_confirmations';
     const PaymentsReceived             = 'payments.received';
     const PaymentsFailed               = 'payments.failed';
+    const PaymentsRejected             = 'payments.rejected';
+    const PaymentsIllegal              = 'payments.illegal';
 }
