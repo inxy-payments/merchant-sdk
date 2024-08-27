@@ -11,7 +11,7 @@ use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentIllegalWebhook;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 use INXY\Payments\Merchant\Webhooks\Enum\PaymentIntentStatus;
-use INXY\Payments\Merchant\Webhooks\Factories\PaymentsRejectedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsIllegalWebhookFactory;
 
 class PaymentsIllegalWebhookFactoryTest extends FactoryTest
 {
@@ -20,7 +20,7 @@ class PaymentsIllegalWebhookFactoryTest extends FactoryTest
      */
     public function testWebhookCreate()
     {
-        $webhook = PaymentsRejectedWebhookFactory::create($this->payload);
+        $webhook = PaymentsIllegalWebhookFactory::create($this->payload);
 
         $this->assertInstanceOf(PaymentIllegalWebhook::class, $webhook);
         $this->assertSame('wh_mKq34DEk15Jy0aX', $webhook->id);
