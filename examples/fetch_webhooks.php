@@ -3,7 +3,9 @@
 require_once('vendor/autoload.php');
 
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsFailedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsIllegalWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsRejectedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Validator;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsWaitingConfirmationsWebhookFactory;
@@ -43,6 +45,12 @@ function handleWebhooks($request) {
             break;
         case EventName::PaymentsFailed:
             handlePaymentsFailedWebhook($data);
+            break;
+        case EventName::PaymentsRejected:
+            handlePaymentsRejectedWebhook($data);
+            break;
+        case EventName::PaymentsIllegal:
+            handlePaymentsIllegalWebhook($data);
             break;
         default:
             throw new InvalidArgumentException('Undefined webhook name');
@@ -98,6 +106,18 @@ function handlePaymentsExpiredWebhook(stdClass $webhookData) {
 
 function handlePaymentsFailedWebhook(stdClass $webhookData) {
     $webhook = PaymentsFailedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handlePaymentsRejectedWebhook(stdClass $webhookData) {
+    $webhook = PaymentsRejectedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handlePaymentsIllegalWebhook(stdClass $webhookData) {
+    $webhook = PaymentsIllegalWebhookFactory::create($webhookData);
 
     /** Your code here */
 }

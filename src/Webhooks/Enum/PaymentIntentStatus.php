@@ -11,4 +11,6 @@ class PaymentIntentStatus
     const Paid                = 'paid';
     const Canceled            = 'canceled';
     const Expired             = 'expired';
+    const Failed              = 'failed';
+    const Illegal             = 'illegal';
 }
