@@ -21,6 +21,11 @@ class MultiCurrencySessionRequest extends Request
     private ?Customer       $customer              = null;
 
     /**
+     * @var int|null
+     */
+    private $lifeTimeMinutes;
+
+    /**
      * @param float  $fiatAmount
      * @param string $orderName
      * @param string $fiatCurrency
@@ -95,6 +100,14 @@ class MultiCurrencySessionRequest extends Request
     }
 
     /**
+     * @param int $lifeTimeMinutes
+     */
+    public function setLifeTimeMinutes($lifeTimeMinutes)
+    {
+        $this->lifeTimeMinutes = $lifeTimeMinutes;
+    }
+
+    /**
      * @return array
      */
     public function toArray(): array
@@ -110,6 +123,7 @@ class MultiCurrencySessionRequest extends Request
             'success_url'            => $this->successUrl,
             'cancel_url'             => $this->cancelUrl,
             'customer'               => $this->customer ? $this->customer->toArray() : null,
+            'life_time_minutes'      => $this->lifeTimeMinutes,
         ];
     }
 }
