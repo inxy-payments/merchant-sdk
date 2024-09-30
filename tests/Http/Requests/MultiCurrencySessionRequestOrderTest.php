@@ -43,7 +43,8 @@ class MultiCurrencySessionRequestOrderTest extends TestCase
             'email'      => 'testexample@mail.com',
             'first_name' => 'John',
             'last_name'  => 'Doe'
-        ]
+        ],
+        'life_time_minutes'     => 60,
     ];
 
     /**
@@ -68,6 +69,7 @@ class MultiCurrencySessionRequestOrderTest extends TestCase
         $sessionRequest->setCancelUrl('https://example.com/cancel');
         $sessionRequest->setSuccessUrl('https://example.com/success');
         $sessionRequest->setCustomer($customer);
+        $sessionRequest->setLifeTimeMinutes(60);
 
         $this->assertSame($sessionRequest->toArray(), self::$sessionRequestExample);
 
