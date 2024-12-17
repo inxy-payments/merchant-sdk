@@ -25,7 +25,7 @@ class PaymentsReturnedWebhookFactoryTest extends FactoryTest
         $this->assertInstanceOf(PaymentReturnedWebhook::class, $webhook);
         $this->assertSame('wh_mKq34DEk15Jy0aX', $webhook->id);
         $this->assertSame(ObjectName::Webhook, $webhook->object);
-        $this->assertSame(EventName::PaymentsSeized, $webhook->name);
+        $this->assertSame(EventName::PaymentsReturned, $webhook->name);
         $this->assertSame(PaymentIntentStatus::Compliance, $webhook->data->paymentIntent->status);
         $this->assertSame('compliance', $webhook->data->payment->status);
         $this->assertSame('returned', $webhook->data->payment->subStatus);
