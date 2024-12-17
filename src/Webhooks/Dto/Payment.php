@@ -19,6 +19,10 @@ class Payment
     /**
      * @var string
      */
+    public $subStatus;
+    /**
+     * @var string
+     */
     public $currencyCode;
     /**
      * @var Currency

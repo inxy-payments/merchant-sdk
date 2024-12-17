@@ -2,10 +2,12 @@
 
 require_once('vendor/autoload.php');
 
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsReturnedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsFailedWebhookFactory;
-use INXY\Payments\Merchant\Webhooks\Factories\PaymentsIllegalWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsPendingReviewWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsInitWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsRejectedWebhookFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\PaymentsSeizedWebhookFactory;
 use INXY\Payments\Merchant\Webhooks\Validator;
 use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Factories\PaymentsWaitingConfirmationsWebhookFactory;
@@ -49,8 +51,14 @@ function handleWebhooks($request) {
         case EventName::PaymentsRejected:
             handlePaymentsRejectedWebhook($data);
             break;
-        case EventName::PaymentsIllegal:
-            handlePaymentsIllegalWebhook($data);
+        case EventName::PaymentsPendingReview:
+            handlePaymentsPendingReviewWebhook($data);
+            break;
+        case EventName::PaymentsSeized:
+            handlePaymentsSeizedWebhook($data);
+            break;
+        case EventName::PaymentsReturned:
+            handlePaymentsReturnedWebhook($data);
             break;
         default:
             throw new InvalidArgumentException('Undefined webhook name');
@@ -116,8 +124,20 @@ function handlePaymentsRejectedWebhook(stdClass $webhookData) {
     /** Your code here */
 }
 
-function handlePaymentsIllegalWebhook(stdClass $webhookData) {
-    $webhook = PaymentsIllegalWebhookFactory::create($webhookData);
+function handlePaymentsPendingReviewWebhook(stdClass $webhookData) {
+    $webhook = PaymentsPendingReviewWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handlePaymentsReturnedWebhook(stdClass $webhookData) {
+    $webhook = PaymentsReturnedWebhookFactory::create($webhookData);
+
+    /** Your code here */
+}
+
+function handlePaymentsSeizedWebhook(stdClass $webhookData) {
+    $webhook = PaymentsSeizedWebhookFactory::create($webhookData);
 
     /** Your code here */
 }
