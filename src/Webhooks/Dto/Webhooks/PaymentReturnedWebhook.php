@@ -3,12 +3,12 @@
 namespace INXY\Payments\Merchant\Webhooks\Dto\Webhooks;
 
 use INXY\Payments\Merchant\Webhooks\Dto\Webhook;
-use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentIllegalData;
+use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentReturnedData;
 
-class PaymentIllegalWebhook extends Webhook
+class PaymentReturnedWebhook extends Webhook
 {
     /**
-     * @var PaymentIllegalData
+     * @var PaymentReturnedData
      */
     public $data;
 }

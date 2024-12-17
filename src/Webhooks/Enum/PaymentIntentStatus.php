@@ -12,5 +12,6 @@ class PaymentIntentStatus
     const Canceled            = 'canceled';
     const Expired             = 'expired';
     const Failed              = 'failed';
-    const Illegal             = 'illegal';
+    const Compliance          = 'compliance';
+    const PendingReview       = 'pending_review';
 }

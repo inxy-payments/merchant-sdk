@@ -11,5 +11,7 @@ class EventName
     const PaymentsReceived             = 'payments.received';
     const PaymentsFailed               = 'payments.failed';
     const PaymentsRejected             = 'payments.rejected';
-    const PaymentsIllegal              = 'payments.illegal';
+    const PaymentsPendingReview        = 'payments.pending_review';
+    const PaymentsSeized               = 'payments.seized';
+    const PaymentsReturned             = 'payments.returned';
 }
