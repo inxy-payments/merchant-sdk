@@ -26,7 +26,7 @@ class PaymentsPendingReviewWebhookFactoryTest extends FactoryTest
         $this->assertSame('wh_mKq34DEk15Jy0aX', $webhook->id);
         $this->assertSame(ObjectName::Webhook, $webhook->object);
         $this->assertSame(EventName::PaymentsPendingReview, $webhook->name);
-        $this->assertSame(PaymentIntentStatus::Compliance, $webhook->data->paymentIntent->status);
+        $this->assertSame(PaymentIntentStatus::PendingReview, $webhook->data->paymentIntent->status);
         $this->assertInstanceOf(PaymentPendingReviewData::class, $webhook->data);
         $this->assertInstanceOf(Session::class, $webhook->data->session);
         $this->assertInstanceOf(PaymentIntent::class, $webhook->data->paymentIntent);
@@ -38,6 +38,6 @@ class PaymentsPendingReviewWebhookFactoryTest extends FactoryTest
      */
     protected function payloadFilePath()
     {
-        return 'tests/data/webhooks/payments.compliance.json';
+        return 'tests/data/webhooks/payments.pending_review.json';
     }
 }

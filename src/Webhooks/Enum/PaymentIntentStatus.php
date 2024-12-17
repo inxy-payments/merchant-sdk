@@ -13,4 +13,5 @@ class PaymentIntentStatus
     const Expired             = 'expired';
     const Failed              = 'failed';
     const Compliance          = 'compliance';
+    const PendingReview       = 'pending_review';
 }
