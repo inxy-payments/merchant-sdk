@@ -10,7 +10,7 @@ on:
 
 jobs:
   run_tests:
-    name: Run PHPUnit Tests
+    name: Run PHPUnit Tests v1
     runs-on: ubuntu-latest
 
     strategy:
