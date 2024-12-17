@@ -7,6 +7,7 @@ class Payment
     public string   $id;
     public string   $object;
     public string   $status;
+    public string   $subStatus;
     public string   $currencyCode;
     public Currency $currency;
     public float    $amount;

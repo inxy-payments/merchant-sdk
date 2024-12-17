@@ -6,7 +6,7 @@ use INXY\Payments\Merchant\Webhooks\Dto\Payment;
 use INXY\Payments\Merchant\Webhooks\Dto\PaymentIntent;
 use INXY\Payments\Merchant\Webhooks\Dto\Session;
 
-class PaymentIllegalData
+class PaymentSeizedData
 {
     public Session       $session;
     public PaymentIntent $paymentIntent;

@@ -11,6 +11,7 @@ class PaymentsFactory
 {
     /**
      * @param stdClass $payment
+     *
      * @return Payment
      */
     public static function create(stdClass $payment): Payment
@@ -24,6 +25,7 @@ class PaymentsFactory
         $paymentDto->id               = $payment->id;
         $paymentDto->object           = $payment->object;
         $paymentDto->status           = $payment->status;
+        $paymentDto->subStatus        = $payment->sub_status;
         $paymentDto->currencyCode     = $payment->currency_code;
         $paymentDto->amount           = $payment->amount;
         $paymentDto->fiatAmount       = $payment->fiat_amount;

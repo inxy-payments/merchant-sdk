@@ -18,6 +18,7 @@ class PaymentsFactoryTest extends FactoryTest
         $this->assertSame('pay_WNgOL28rEdX47wP', $payment->id);
         $this->assertSame(ObjectName::Payment, $payment->object);
         $this->assertSame('finished', $payment->status);
+        $this->assertSame('finished', $payment->subStatus);
         $this->assertSame(1.5, $payment->fiatAmount);
         $this->assertSame('USD', $payment->fiatCurrencyCode);
         $this->assertSame(1.5, $payment->amount);
