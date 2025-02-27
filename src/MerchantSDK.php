@@ -4,6 +4,7 @@ namespace INXY\Payments\Merchant;
 
 use INXY\Payments\Merchant\Http\Api\Api;
 use INXY\Payments\Merchant\Http\Factories\ApiFactory;
+use INXY\Payments\Merchant\Http\Requests\CryptoCryptoSessionRequest;
 use INXY\Payments\Merchant\Http\Requests\MultiCurrencySessionRequest;
 use INXY\Payments\Merchant\Http\Requests\SessionRequest;
 use INXY\Payments\Merchant\Http\Responses\SessionResponse;
@@ -40,5 +41,14 @@ class MerchantSDK
     public function createMultiCurrencySession(MultiCurrencySessionRequest $request)
     {
         return $this->api->sessions->createMultiCurrency($request);
+    }
+
+    /**
+     * @param CryptoCryptoSessionRequest $request
+     * @return SessionResponse
+     */
+    public function createCryptoCryptoSession(CryptoCryptoSessionRequest $request)
+    {
+        return $this->api->sessions->createCryptoCrypto($request);
     }
 }
