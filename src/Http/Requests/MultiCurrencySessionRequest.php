@@ -102,7 +102,7 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param int $lifeTimeMinutes
      */
-    public function setLifeTimeMinutes($lifeTimeMinutes)
+    public function setLifeTimeMinutes(int $lifeTimeMinutes)
     {
         $this->lifeTimeMinutes = $lifeTimeMinutes;
     }
