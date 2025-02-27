@@ -2,7 +2,6 @@
 
 namespace INXY\Payments\Merchant\Http\Requests;
 
-use InvalidArgumentException;
 use INXY\Payments\Merchant\Enums\FiatCurrencyCode;
 use INXY\Payments\Merchant\Http\Requests\Dto\Cryptocurrency;
 use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
@@ -68,7 +67,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param string $orderId
      */
-    public function setOrderId($orderId): void
+    public function setOrderId($orderId)
     {
         $this->orderId = $orderId;
     }
@@ -76,7 +75,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param string $postbackUrl
      */
-    public function setPostbackUrl($postbackUrl): void
+    public function setPostbackUrl($postbackUrl)
     {
         $this->postbackUrl = $postbackUrl;
     }
@@ -84,7 +83,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param string $successUrl
      */
-    public function setSuccessUrl($successUrl): void
+    public function setSuccessUrl($successUrl)
     {
         $this->successUrl = $successUrl;
     }
@@ -92,7 +91,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param string $cancelUrl
      */
-    public function setCancelUrl($cancelUrl): void
+    public function setCancelUrl($cancelUrl)
     {
         $this->cancelUrl = $cancelUrl;
     }
@@ -100,7 +99,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param Customer $customer
      */
-    public function setCustomer(Customer $customer): void
+    public function setCustomer(Customer $customer)
     {
         $this->customer = $customer;
     }
@@ -116,7 +115,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @return array
      */
-    public function toArray(): array
+    public function toArray()
     {
         return [
             'fiat_currency'          => $this->fiatCurrency,

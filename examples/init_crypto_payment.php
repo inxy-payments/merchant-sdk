@@ -36,5 +36,5 @@ try {
     $sessionResponse = $merchantSDK->createCryptoCryptoSession($sessionRequest);
 
     header('Location: ' . $sessionResponse->getRedirectUri());
-} catch (JsonException|GuzzleException $e) {
+} catch (GuzzleException $e) {
 }

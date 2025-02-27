@@ -13,7 +13,7 @@ use INXY\Payments\Merchant\Http\Requests\Dto\Cryptocurrency;
 
 class CryptoCryptoSessionRequestOrderTest extends TestCase
 {
-    private static array $sessionRequestExample = [
+    private static $sessionRequestExample = [
         'fiat_currency'          => 'EUR',
         'amount'                 => 1.0,
         'order_name'             => 'Test Order',
@@ -37,7 +37,7 @@ class CryptoCryptoSessionRequestOrderTest extends TestCase
     /**
      * @return void
      */
-    public function testOrderRequestCreate(): void
+    public function testOrderRequestCreate()
     {
         $orderAmount           = 1.0;
         $orderName             = 'Test Order';
