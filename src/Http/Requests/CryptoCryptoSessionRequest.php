@@ -56,7 +56,7 @@ class CryptoCryptoSessionRequest extends Request
      * @param Cryptocurrency $defaultCryptocurrency
      * @param string         $fiatCurrency
      */
-    public function __construct($amount, $orderName, Cryptocurrency $defaultCryptocurrency, $fiatCurrency = FiatCurrencyCode::USD)
+    public function __construct(float $amount, string $orderName, Cryptocurrency $defaultCryptocurrency, string $fiatCurrency = FiatCurrencyCode::USD)
     {
         $this->amount                = $amount;
         $this->orderName             = $orderName;
@@ -67,7 +67,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param string $orderId
      */
-    public function setOrderId($orderId)
+    public function setOrderId(string $orderId)
     {
         $this->orderId = $orderId;
     }
@@ -75,7 +75,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param string $postbackUrl
      */
-    public function setPostbackUrl($postbackUrl)
+    public function setPostbackUrl(string $postbackUrl)
     {
         $this->postbackUrl = $postbackUrl;
     }
@@ -83,7 +83,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param string $successUrl
      */
-    public function setSuccessUrl($successUrl)
+    public function setSuccessUrl(string $successUrl)
     {
         $this->successUrl = $successUrl;
     }
@@ -91,7 +91,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param string $cancelUrl
      */
-    public function setCancelUrl($cancelUrl)
+    public function setCancelUrl(string $cancelUrl)
     {
         $this->cancelUrl = $cancelUrl;
     }
@@ -107,7 +107,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @param int $lifeTimeMinutes
      */
-    public function setLifeTimeMinutes($lifeTimeMinutes)
+    public function setLifeTimeMinutes(int $lifeTimeMinutes)
     {
         $this->lifeTimeMinutes = $lifeTimeMinutes;
     }
@@ -115,7 +115,7 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'fiat_currency'          => $this->fiatCurrency,

@@ -31,7 +31,7 @@ class Sessions extends ApiResource
      * @param MultiCurrencySessionRequest $request
      * @return SessionResponse
      */
-    public function createMultiCurrency(MultiCurrencySessionRequest $request)
+    public function createMultiCurrency(MultiCurrencySessionRequest $request): SessionResponse
     {
         $response = $this->client->post(Route::MultiCurrencySessionsCreate, [
             'json' => $request->toArray()
@@ -46,7 +46,7 @@ class Sessions extends ApiResource
      * @param CryptoCryptoSessionRequest $request
      * @return SessionResponse
      */
-    public function createCryptoCrypto(CryptoCryptoSessionRequest $request)
+    public function createCryptoCrypto(CryptoCryptoSessionRequest $request): SessionResponse
     {
         $response = $this->client->post(Route::MultiCurrencySessionsCreate, [
             'json' => $request->toArray()

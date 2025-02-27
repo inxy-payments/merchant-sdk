@@ -38,7 +38,7 @@ class MerchantSDK
      * @param MultiCurrencySessionRequest $request
      * @return SessionResponse
      */
-    public function createMultiCurrencySession(MultiCurrencySessionRequest $request)
+    public function createMultiCurrencySession(MultiCurrencySessionRequest $request): SessionResponse
     {
         return $this->api->sessions->createMultiCurrency($request);
     }
@@ -47,7 +47,7 @@ class MerchantSDK
      * @param CryptoCryptoSessionRequest $request
      * @return SessionResponse
      */
-    public function createCryptoCryptoSession(CryptoCryptoSessionRequest $request)
+    public function createCryptoCryptoSession(CryptoCryptoSessionRequest $request): SessionResponse
     {
         return $this->api->sessions->createCryptoCrypto($request);
     }
