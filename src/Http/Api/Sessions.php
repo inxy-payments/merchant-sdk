@@ -7,7 +7,9 @@ use INXY\Payments\Merchant\Http\Api\Enums\Route;
 use INXY\Payments\Merchant\Http\Requests\CryptoCryptoSessionRequest;
 use INXY\Payments\Merchant\Http\Requests\MultiCurrencySessionRequest;
 use INXY\Payments\Merchant\Http\Requests\SessionRequest;
+use INXY\Payments\Merchant\Http\Responses\Factories\SessionStatusResponseFactory;
 use INXY\Payments\Merchant\Http\Responses\SessionResponse;
+use INXY\Payments\Merchant\Http\Responses\SessionStatusResponse;
 use JsonException;
 
 class Sessions extends ApiResource
@@ -60,5 +62,18 @@ class Sessions extends ApiResource
         $payload = $this->getPayload($response);
 
         return new SessionResponse($payload->data->redirect_url);
+    }
+
+    /**
+     * @param string $sessionIdentity
+     * @return SessionStatusResponse
+     * @throws JsonException|GuzzleException
+     */
+    public function getStatus(string $sessionIdentity): SessionStatusResponse
+    {
+        $response = $this->client->get(Route::SessionStatus . $sessionIdentity);
+        $payload  = $this->getPayload($response);
+
+        return SessionStatusResponseFactory::create($payload);
     }
 }

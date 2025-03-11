@@ -9,4 +9,5 @@ class Route
      */
     public const SessionsCreate              = '/sessions';
     public const MultiCurrencySessionsCreate = '/sessions/multi-currency';
+    public const SessionStatus = '/sessions/status/';
 }
