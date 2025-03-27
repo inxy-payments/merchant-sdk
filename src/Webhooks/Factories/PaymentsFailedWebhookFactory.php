@@ -17,7 +17,7 @@ class PaymentsFailedWebhookFactory
      * @param stdClass $webhook
      * @return PaymentFailedWebhook
      */
-    public static function create(stdClass $webhook)
+    public static function create(stdClass $webhook): PaymentFailedWebhook
     {
         if (!property_exists($webhook, 'object') || $webhook->object !== ObjectName::Webhook) {
             throw new InvalidArgumentException('Webhook param must be object with name webhook');

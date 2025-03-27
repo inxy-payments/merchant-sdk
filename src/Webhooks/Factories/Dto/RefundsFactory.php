@@ -14,7 +14,7 @@ class RefundsFactory
      *
      * @return Refund
      */
-    public static function create(stdClass $refund)
+    public static function create(stdClass $refund): Refund
     {
         if (!property_exists($refund, 'object') || $refund->object !== ObjectName::Refund) {
             throw new InvalidArgumentException('Refund param must be object with name refund');
