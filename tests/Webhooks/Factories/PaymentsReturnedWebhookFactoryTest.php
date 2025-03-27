@@ -5,6 +5,7 @@ namespace Webhooks\Factories;
 use INXY\Payments\Merchant\Tests\FactoryTest;
 use INXY\Payments\Merchant\Webhooks\Dto\Payment;
 use INXY\Payments\Merchant\Webhooks\Dto\PaymentIntent;
+use INXY\Payments\Merchant\Webhooks\Dto\Refund;
 use INXY\Payments\Merchant\Webhooks\Dto\Session;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\Data\PaymentReturnedData;
 use INXY\Payments\Merchant\Webhooks\Dto\Webhooks\PaymentReturnedWebhook;
@@ -33,6 +34,7 @@ class PaymentsReturnedWebhookFactoryTest extends FactoryTest
         $this->assertInstanceOf(Session::class, $webhook->data->session);
         $this->assertInstanceOf(PaymentIntent::class, $webhook->data->paymentIntent);
         $this->assertInstanceOf(Payment::class, $webhook->data->payment);
+        $this->assertInstanceOf(Refund::class, $webhook->data->refund);
     }
 
     /**
