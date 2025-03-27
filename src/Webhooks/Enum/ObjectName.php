@@ -11,4 +11,5 @@ class ObjectName
     const Webhook       = 'webhook';
     const Currency      = 'currency';
     const Fee           = 'fee';
+    const Refund        = 'refund';
 }
