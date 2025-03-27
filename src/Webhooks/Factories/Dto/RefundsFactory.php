@@ -25,7 +25,7 @@ class RefundsFactory
         $refundDto->id               = $refund->id;
         $refundDto->object           = $refund->object;
         $refundDto->txHash           = $refund->tx_hash;
-        $refundDto->recipientAddress = $refund->recipientAddress;
+        $refundDto->recipientAddress = $refund->recipient_address;
         $refundDto->completedAt      = $refund->completed_at;
 
         return $refundDto;
