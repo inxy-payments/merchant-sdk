@@ -48,12 +48,12 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @var int|null
      */
-    private $lifeTimeMinutes;
+    private $lifeTimeMinutes = null;
 
     /**
      * @var float|null
      */
-    private $amountDeviationPercentage;
+    private $amountDeviationPercentage = null;
 
     /**
      * @param float          $amount
