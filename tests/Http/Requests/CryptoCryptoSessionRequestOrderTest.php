@@ -32,7 +32,7 @@ class CryptoCryptoSessionRequestOrderTest extends TestCase
             'last_name'  => 'Doe'
         ],
         'life_time_minutes'           => 60,
-        'amount_deviation_percentage' => 1,
+        'amount_deviation_percentage' => 1.0,
 
     ];
 
