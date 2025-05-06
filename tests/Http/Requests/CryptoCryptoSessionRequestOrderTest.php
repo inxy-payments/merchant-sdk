@@ -31,7 +31,9 @@ class CryptoCryptoSessionRequestOrderTest extends TestCase
             'first_name' => 'John',
             'last_name'  => 'Doe'
         ],
-        'life_time_minutes'     => 60,
+        'life_time_minutes'           => 60,
+        'amount_deviation_percentage' => 1,
+
     ];
 
     /**
@@ -51,6 +53,7 @@ class CryptoCryptoSessionRequestOrderTest extends TestCase
         $sessionRequest->setSuccessUrl('https://example.com/success');
         $sessionRequest->setCustomer($customer);
         $sessionRequest->setLifeTimeMinutes(60);
+        $sessionRequest->setAmountDeviationPercentage(1);
 
         $this->assertSame($sessionRequest->toArray(), self::$sessionRequestExample);
     }
