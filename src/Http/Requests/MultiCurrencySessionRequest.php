@@ -56,6 +56,11 @@ class MultiCurrencySessionRequest extends Request
     private $lifeTimeMinutes;
 
     /**
+     * @var float|null
+     */
+    private $amountDeviationPercentage;
+
+    /**
      * @param float  $fiatAmount
      * @param string $orderName
      */
@@ -138,22 +143,31 @@ class MultiCurrencySessionRequest extends Request
     }
 
     /**
+     * @param float $amountDeviationPercentage
+     */
+    public function setAmountDeviationPercentage($amountDeviationPercentage)
+    {
+        $this->amountDeviationPercentage = $amountDeviationPercentage;
+    }
+
+    /**
      * @return array
      */
     public function toArray()
     {
         return [
-            'fiat_currency'          => $this->fiatCurrency,
-            'fiat_amount'            => $this->fiatAmount,
-            'order_name'             => $this->orderName,
-            'order_id'               => $this->orderId,
-            'cryptocurrencies'       => array_map(function (Cryptocurrency $cryptocurrency) { return $cryptocurrency->toArray(); }, $this->cryptocurrencies),
-            'default_cryptocurrency' => $this->defaultCryptocurrency ? $this->defaultCryptocurrency->toArray() : null,
-            'postback_url'           => $this->postbackUrl,
-            'success_url'            => $this->successUrl,
-            'cancel_url'             => $this->cancelUrl,
-            'customer'               => $this->customer ? $this->customer->toArray() : null,
-            'life_time_minutes'      => $this->lifeTimeMinutes,
+            'fiat_currency'               => $this->fiatCurrency,
+            'fiat_amount'                 => $this->fiatAmount,
+            'order_name'                  => $this->orderName,
+            'order_id'                    => $this->orderId,
+            'cryptocurrencies'            => array_map(function (Cryptocurrency $cryptocurrency) { return $cryptocurrency->toArray(); }, $this->cryptocurrencies),
+            'default_cryptocurrency'      => $this->defaultCryptocurrency ? $this->defaultCryptocurrency->toArray() : null,
+            'postback_url'                => $this->postbackUrl,
+            'success_url'                 => $this->successUrl,
+            'cancel_url'                  => $this->cancelUrl,
+            'customer'                    => $this->customer ? $this->customer->toArray() : null,
+            'life_time_minutes'           => $this->lifeTimeMinutes,
+            'amount_deviation_percentage' => $this->amountDeviationPercentage,
         ];
     }
 }
