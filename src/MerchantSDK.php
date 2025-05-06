@@ -9,6 +9,7 @@ use INXY\Payments\Merchant\Http\Requests\CryptoCryptoSessionRequest;
 use INXY\Payments\Merchant\Http\Requests\MultiCurrencySessionRequest;
 use INXY\Payments\Merchant\Http\Requests\SessionRequest;
 use INXY\Payments\Merchant\Http\Responses\SessionResponse;
+use INXY\Payments\Merchant\Http\Responses\SessionStatusResponse;
 use JsonException;
 
 class MerchantSDK
@@ -52,5 +53,15 @@ class MerchantSDK
     public function createCryptoCryptoSession(CryptoCryptoSessionRequest $request): SessionResponse
     {
         return $this->api->sessions->createCryptoCrypto($request);
+    }
+
+    /**
+     * @param string $sessionIdentity
+     * @return SessionStatusResponse
+     * @throws JsonException|GuzzleException
+     */
+    public function getSessionStatus(string $sessionIdentity): SessionStatusResponse
+    {
+        return $this->api->sessions->getStatus($sessionIdentity);
     }
 }
