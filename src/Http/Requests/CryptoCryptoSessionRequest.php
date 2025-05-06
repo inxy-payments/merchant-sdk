@@ -8,47 +8,17 @@ use INXY\Payments\Merchant\Http\Requests\Dto\Customer;
 
 class CryptoCryptoSessionRequest extends Request
 {
-    /**
-     * @var string
-     */
-    private string $fiatCurrency;
-    /**
-     * @var float
-     */
-    private float $amount;
-    /**
-     * @var string
-     */
-    private string $orderName;
-    /**
-     * @var Cryptocurrency
-     */
+    private string         $fiatCurrency;
+    private float          $amount;
+    private string         $orderName;
     private Cryptocurrency $defaultCryptocurrency;
-    /**
-     * @var string|null
-     */
-    private ?string $orderId = null;
-    /**
-     * @var string|null
-     */
-    private ?string $postbackUrl = null;
-    /**
-     * @var string|null
-     */
-    private ?string $successUrl = null;
-    /**
-     * @var string|null
-     */
-    private ?string $cancelUrl = null;
-    /**
-     * @var Customer|null
-     */
-    private ?Customer $customer = null;
-
-    /**
-     * @var int|null
-     */
-    private ?int $lifeTimeMinutes;
+    private ?string        $orderId                   = null;
+    private ?string        $postbackUrl               = null;
+    private ?string        $successUrl                = null;
+    private ?string        $cancelUrl                 = null;
+    private ?Customer      $customer                  = null;
+    private ?int           $lifeTimeMinutes           = null;
+    private ?float         $amountDeviationPercentage = null;
 
     /**
      * @param float          $amount
@@ -113,21 +83,30 @@ class CryptoCryptoSessionRequest extends Request
     }
 
     /**
+     * @param float $amountDeviationPercentage
+     */
+    public function setAmountDeviationPercentage(float $amountDeviationPercentage): void
+    {
+        $this->amountDeviationPercentage = $amountDeviationPercentage;
+    }
+
+    /**
      * @return array
      */
     public function toArray(): array
     {
         return [
-            'fiat_currency'          => $this->fiatCurrency,
-            'amount'                 => $this->amount,
-            'order_name'             => $this->orderName,
-            'order_id'               => $this->orderId,
-            'default_cryptocurrency' => $this->defaultCryptocurrency->toArray(),
-            'postback_url'           => $this->postbackUrl,
-            'success_url'            => $this->successUrl,
-            'cancel_url'             => $this->cancelUrl,
-            'customer'               => $this->customer ? $this->customer->toArray() : null,
-            'life_time_minutes'      => $this->lifeTimeMinutes,
+            'fiat_currency'               => $this->fiatCurrency,
+            'amount'                      => $this->amount,
+            'order_name'                  => $this->orderName,
+            'order_id'                    => $this->orderId,
+            'default_cryptocurrency'      => $this->defaultCryptocurrency->toArray(),
+            'postback_url'                => $this->postbackUrl,
+            'success_url'                 => $this->successUrl,
+            'cancel_url'                  => $this->cancelUrl,
+            'customer'                    => $this->customer ? $this->customer->toArray() : null,
+            'life_time_minutes'           => $this->lifeTimeMinutes,
+            'amount_deviation_percentage' => $this->amountDeviationPercentage,
         ];
     }
 }
