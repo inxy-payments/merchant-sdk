@@ -48,7 +48,12 @@ class CryptoCryptoSessionRequest extends Request
     /**
      * @var int|null
      */
-    private $lifeTimeMinutes;
+    private $lifeTimeMinutes = null;
+
+    /**
+     * @var float|null
+     */
+    private $amountDeviationPercentage = null;
 
     /**
      * @param float          $amount
@@ -113,21 +118,30 @@ class CryptoCryptoSessionRequest extends Request
     }
 
     /**
+     * @param float $amountDeviationPercentage
+     */
+    public function setAmountDeviationPercentage($amountDeviationPercentage)
+    {
+        $this->amountDeviationPercentage = $amountDeviationPercentage;
+    }
+
+    /**
      * @return array
      */
     public function toArray(): array
     {
         return [
-            'fiat_currency'          => $this->fiatCurrency,
-            'amount'                 => $this->amount,
-            'order_name'             => $this->orderName,
-            'order_id'               => $this->orderId,
-            'default_cryptocurrency' => $this->defaultCryptocurrency->toArray(),
-            'postback_url'           => $this->postbackUrl,
-            'success_url'            => $this->successUrl,
-            'cancel_url'             => $this->cancelUrl,
-            'customer'               => $this->customer ? $this->customer->toArray() : null,
-            'life_time_minutes'      => $this->lifeTimeMinutes,
+            'fiat_currency'               => $this->fiatCurrency,
+            'amount'                      => $this->amount,
+            'order_name'                  => $this->orderName,
+            'order_id'                    => $this->orderId,
+            'default_cryptocurrency'      => $this->defaultCryptocurrency->toArray(),
+            'postback_url'                => $this->postbackUrl,
+            'success_url'                 => $this->successUrl,
+            'cancel_url'                  => $this->cancelUrl,
+            'customer'                    => $this->customer ? $this->customer->toArray() : null,
+            'life_time_minutes'           => $this->lifeTimeMinutes,
+            'amount_deviation_percentage' => $this->amountDeviationPercentage,
         ];
     }
 }
