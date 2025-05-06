@@ -146,7 +146,7 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param float $amountDeviationPercentage
      */
-    public function setAmountDeviationPercentage($amountDeviationPercentage)
+    public function setAmountDeviationPercentage(float $amountDeviationPercentage)
     {
         $this->amountDeviationPercentage = $amountDeviationPercentage;
     }
