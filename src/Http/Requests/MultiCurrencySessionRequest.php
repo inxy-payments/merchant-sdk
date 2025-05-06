@@ -99,7 +99,7 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param int $lifeTimeMinutes
      */
-    public function setLifeTimeMinutes(int $lifeTimeMinutes)
+    public function setLifeTimeMinutes(int $lifeTimeMinutes): void
     {
         $this->lifeTimeMinutes = $lifeTimeMinutes;
     }
@@ -107,7 +107,7 @@ class MultiCurrencySessionRequest extends Request
     /**
      * @param float $amountDeviationPercentage
      */
-    public function setAmountDeviationPercentage(float $amountDeviationPercentage)
+    public function setAmountDeviationPercentage(float $amountDeviationPercentage): void
     {
         $this->amountDeviationPercentage = $amountDeviationPercentage;
     }
