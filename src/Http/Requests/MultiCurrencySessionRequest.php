@@ -12,18 +12,15 @@ class MultiCurrencySessionRequest extends Request
     private string          $fiatCurrency;
     private float           $fiatAmount;
     private string          $orderName;
-    private ?string         $orderId               = null;
-    private array           $cryptocurrencies      = [];
-    private ?Cryptocurrency $defaultCryptocurrency = null;
-    private ?string         $postbackUrl           = null;
-    private ?string         $successUrl            = null;
-    private ?string         $cancelUrl             = null;
-    private ?Customer       $customer              = null;
-
-    /**
-     * @var int|null
-     */
-    private $lifeTimeMinutes;
+    private ?string         $orderId                   = null;
+    private array           $cryptocurrencies          = [];
+    private ?Cryptocurrency $defaultCryptocurrency     = null;
+    private ?string         $postbackUrl               = null;
+    private ?string         $successUrl                = null;
+    private ?string         $cancelUrl                 = null;
+    private ?Customer       $customer                  = null;
+    private ?int            $lifeTimeMinutes           = null;
+    private ?float          $amountDeviationPercentage = null;
 
     /**
      * @param float  $fiatAmount
@@ -108,22 +105,31 @@ class MultiCurrencySessionRequest extends Request
     }
 
     /**
+     * @param float $amountDeviationPercentage
+     */
+    public function setAmountDeviationPercentage(float $amountDeviationPercentage)
+    {
+        $this->amountDeviationPercentage = $amountDeviationPercentage;
+    }
+
+    /**
      * @return array
      */
     public function toArray(): array
     {
         return [
-            'fiat_currency'          => $this->fiatCurrency,
-            'fiat_amount'            => $this->fiatAmount,
-            'order_name'             => $this->orderName,
-            'order_id'               => $this->orderId,
-            'cryptocurrencies'       => array_map(fn(Cryptocurrency $cryptocurrency) => $cryptocurrency->toArray(), $this->cryptocurrencies),
-            'default_cryptocurrency' => $this->defaultCryptocurrency ? $this->defaultCryptocurrency->toArray() : null,
-            'postback_url'           => $this->postbackUrl,
-            'success_url'            => $this->successUrl,
-            'cancel_url'             => $this->cancelUrl,
-            'customer'               => $this->customer ? $this->customer->toArray() : null,
-            'life_time_minutes'      => $this->lifeTimeMinutes,
+            'fiat_currency'               => $this->fiatCurrency,
+            'fiat_amount'                 => $this->fiatAmount,
+            'order_name'                  => $this->orderName,
+            'order_id'                    => $this->orderId,
+            'cryptocurrencies'            => array_map(fn(Cryptocurrency $cryptocurrency) => $cryptocurrency->toArray(), $this->cryptocurrencies),
+            'default_cryptocurrency'      => $this->defaultCryptocurrency ? $this->defaultCryptocurrency->toArray() : null,
+            'postback_url'                => $this->postbackUrl,
+            'success_url'                 => $this->successUrl,
+            'cancel_url'                  => $this->cancelUrl,
+            'customer'                    => $this->customer ? $this->customer->toArray() : null,
+            'life_time_minutes'           => $this->lifeTimeMinutes,
+            'amount_deviation_percentage' => $this->amountDeviationPercentage,
         ];
     }
 }
