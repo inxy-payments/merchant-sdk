@@ -9,6 +9,7 @@ use INXY\Payments\Merchant\Webhooks\Enum\EventName;
 use INXY\Payments\Merchant\Webhooks\Enum\ObjectName;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentIntentsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\PaymentsFactory;
+use INXY\Payments\Merchant\Webhooks\Factories\Dto\RefundsFactory;
 use INXY\Payments\Merchant\Webhooks\Factories\Dto\SessionsFactory;
 use stdClass;
 
@@ -34,6 +35,7 @@ class PaymentsReturnedWebhookFactory
         $webhookData->session       = SessionsFactory::create($webhook->data->session);
         $webhookData->paymentIntent = PaymentIntentsFactory::create($webhook->data->payment_intent);
         $webhookData->payment       = PaymentsFactory::create($webhook->data->payment);
+        $webhookData->refund        = RefundsFactory::create($webhook->data->refund);
 
         $webhookDto = new PaymentReturnedWebhook($webhook->id, $webhook->object, $webhook->name);
 

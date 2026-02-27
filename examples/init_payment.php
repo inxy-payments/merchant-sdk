@@ -41,6 +41,7 @@ $sessionRequest->setCancelUrl('https://example.com/cancel');
 $sessionRequest->setSuccessUrl('https://example.com/success');
 $sessionRequest->setCustomer($customer);
 $sessionRequest->setLifeTimeMinutes(60);
+$sessionRequest->setAmountDeviationPercentage(1);
 
 try {
     $sessionResponse = $merchantSDK->createMultiCurrencySession($sessionRequest);
