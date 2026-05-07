@@ -1,0 +1,63 @@
+{
+  "data": {
+    "session": {
+      "id": "ses_wDgl42JbAB2YbG7",
+      "object": "session",
+      "status": "active",
+      "payment_type": "onetime",
+      "fiat_amount": "11.99",
+      "fiat_currency_code": "USD",
+      "order_id": "1234",
+      "order_name": "Premium plan",
+      "customer": {
+        "id": "cus_nDxPeXk8oa30oZW",
+        "object": "customer",
+        "email": "12test@gmail.com",
+        "first_name": "aaa",
+        "last_name": "bbbb"
+      },
+      "created_date": 1741711218
+    },
+    "payment_intent": {
+      "id": "pi_EZNMn2nLKjaBAeK",
+      "object": "payment_intent",
+      "currency_code": "USDT",
+      "currency": {
+        "id": "cur_9KG4xy2REpgnPbZ",
+        "object": "currency",
+        "code": "USDT",
+        "blockchain": "ethereum",
+        "coin_type": "erc20"
+      },
+      "amount": 12,
+      "fiat_amount": 11.99,
+      "paid_amount": 0,
+      "paid_fiat_amount": 0,
+      "exchange_rate": "0.9999891799658299",
+      "status": "waiting_payment",
+      "created_date": 1741711240,
+      "issued_wallet": "0xc34C94C039e95EB3F3D6bb51B8787317384DCE89",
+      "customer": {
+        "id": "cus_nDxPeXk8oa30oZW",
+        "object": "customer",
+        "email": "12test@gmail.com",
+        "first_name": "aaa",
+        "last_name": "bbbb"
+      },
+      "payments": [],
+      "fees": {
+        "object": "fee",
+        "amount": "0",
+        "currency": {
+          "id": "cur_9KG4xy2REpgnPbZ",
+          "object": "currency",
+          "code": "USDT",
+          "blockchain": "ethereum",
+          "coin_type": "erc20"
+        },
+        "fiat_amount": "0",
+        "fiat_currency_code": "USD"
+      }
+    }
+  }
+}
